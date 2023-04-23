@@ -24,9 +24,12 @@ using Microsoft.ApplicationInsights.DataContracts;
 using MobiFlight.xplane;
 using MobiFlight.HubHop;
 using System.Threading.Tasks;
+using System.Runtime.Versioning;
+using System.Security.Policy;
 
 namespace MobiFlight.UI
 {
+    [SupportedOSPlatform("windows")]
     public partial class MainForm : Form
     {
         public static String Version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
@@ -70,7 +73,7 @@ namespace MobiFlight.UI
             {
                 Log.Instance.Severity = (LogSeverity)Enum.Parse(typeof(LogSeverity), Properties.Settings.Default.LogLevel, true);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Log.Instance.log("Unknown log level.", LogSeverity.Error);
             }
@@ -118,6 +121,7 @@ namespace MobiFlight.UI
             startupPanel.Dock = DockStyle.Fill;
         }
 
+        [SupportedOSPlatform("windows")]
         private void MainForm_Shown(object sender, EventArgs e)
         {
             // Check for updates before loading anything else
@@ -352,7 +356,7 @@ namespace MobiFlight.UI
                     try { 
                         currentVersion = new Version(module.Version != null ? module.Version : "0.0.0");
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         currentVersion = new Version("0.0.0");
                     }
@@ -1156,7 +1160,7 @@ namespace MobiFlight.UI
                 // refactor!!!
                 inputConfigPanel.InputDataSetConfig.ReadXml(configFile.getInputConfig());
             }
-            catch (InvalidExpressionException ex)
+            catch (InvalidExpressionException)
             {
                 // no inputs configured... old format... just ignore
             }
@@ -1553,7 +1557,7 @@ namespace MobiFlight.UI
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(i18n._tr("WebsiteUrlHelp"));
+            Process.Start(new ProcessStartInfo() { FileName = i18n._tr("WebsiteUrlHelp"), UseShellExecute = true });
         }
 
 
@@ -1565,11 +1569,12 @@ namespace MobiFlight.UI
 
         private void donateToolStripButton_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7GV3DCC7BXWLY");               
+            Process.Start(new ProcessStartInfo() { FileName = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7GV3DCC7BXWLY", UseShellExecute = true });
         }
 
         /// taken from
         /// http://msdn.microsoft.com/en-us/library/ms404305.aspx
+        [SupportedOSPlatform("windows")]
         private void tabControl1_DrawItem(Object sender, System.Windows.Forms.DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -1768,7 +1773,7 @@ namespace MobiFlight.UI
 
         private void openDiscordServer_Click(object sender, EventArgs e)
         {
-            Process.Start("https://discord.gg/U28QeEJpBV");
+            Process.Start(new ProcessStartInfo() { FileName = "https://discord.gg/U28QeEJpBV", UseShellExecute = true });
         }
 
         private void StatusBarToolStripButton_Click(object sender, EventArgs e)
@@ -1778,17 +1783,17 @@ namespace MobiFlight.UI
 
         private void YouTubeToolStripButton_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.youtube.com/channel/UCxsoCWDKRyu3MpQKNZEXUYA");
+            Process.Start(new ProcessStartInfo() { FileName = "https://www.youtube.com/channel/UCxsoCWDKRyu3MpQKNZEXUYA", UseShellExecute = true });
         }
 
         private void HubHopToolStripButton_Click(object sender, EventArgs e)
         {
-            Process.Start("https://hubhop.mobiflight.com/");
+            Process.Start(new ProcessStartInfo() { FileName = "https://hubhop.mobiflight.com/", UseShellExecute = true });
         }
 
         private void releaseNotesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start($"https://github.com/MobiFlight/MobiFlight-Connector/releases/tag/{CurrentVersion()}");
+            Process.Start(new ProcessStartInfo() { FileName = $"https://github.com/MobiFlight/MobiFlight-Connector/releases/tag/{CurrentVersion()}", UseShellExecute = true });
         }
 
         private void inputsTabControl_TabIndexChanged(object sender, EventArgs e)

@@ -4,10 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace MobiFlight.UI.Panels
 {
+    [SupportedOSPlatform("windows")]
     public partial class OutputConfigPanel : UserControl
     {
         public event EventHandler SettingsChanged;
@@ -675,7 +677,7 @@ namespace MobiFlight.UI.Panels
 
         private void dataGridViewConfig_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            e.Control.ContextMenu = new ContextMenu();
+            e.Control.ContextMenuStrip = new ContextMenuStrip();
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)

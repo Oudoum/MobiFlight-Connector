@@ -69,5 +69,10 @@ namespace MobiFlight.InputConfig
                 MacroName == (obj as LuaMacroInputAction).MacroName &&
                 MacroValue == (obj as LuaMacroInputAction).MacroValue;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

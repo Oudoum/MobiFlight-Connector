@@ -113,5 +113,10 @@ namespace MobiFlight.Modifier
 
             return result;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

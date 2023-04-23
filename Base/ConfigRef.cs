@@ -55,5 +55,10 @@ namespace MobiFlight.Base
                 Ref == (obj as ConfigRef).Ref &&
                 Placeholder == (obj as ConfigRef).Placeholder;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

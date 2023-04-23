@@ -11,7 +11,7 @@ namespace MobiFlight.UI.Panels.Action
 {
     public partial class KeyboardInputPanel : UserControl
     {
-        int isRecording = 0;
+        //int isRecording = 0;
         bool CtrlPressed = false;
         bool AltPressed = false;
         bool ShiftPressed = false;

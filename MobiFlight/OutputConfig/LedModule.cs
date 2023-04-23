@@ -151,5 +151,10 @@ namespace MobiFlight.OutputConfig
                 writer.WriteAttributeString("ledDecimalPoints", String.Join(",", DisplayLedDecimalPoints));
             }
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

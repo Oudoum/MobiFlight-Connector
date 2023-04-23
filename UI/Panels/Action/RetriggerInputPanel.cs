@@ -18,9 +18,8 @@ namespace MobiFlight.UI.Panels.Action
 
         private void _loadPresets()
         {
-            bool isLoaded = true;
         }
-        
+
         internal void syncFromConfig(InputConfig.RetriggerInputAction inputAction)
         {
             if (inputAction == null) return;

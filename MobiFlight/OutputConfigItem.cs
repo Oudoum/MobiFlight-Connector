@@ -289,7 +289,6 @@ namespace MobiFlight
 
             if (reader.LocalName == "configrefs")
             {
-                bool atPosition = false;
                 // read precondition settings if present
                 if (reader.ReadToDescendant("configref"))
                 {
@@ -425,6 +424,11 @@ namespace MobiFlight
 
             clone.Modifiers                 = this.Modifiers.Clone() as ModifierList;
             return clone;
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 

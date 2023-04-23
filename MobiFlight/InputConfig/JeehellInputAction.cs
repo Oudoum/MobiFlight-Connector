@@ -171,5 +171,10 @@ namespace MobiFlight.InputConfig
                 EventId == (obj as JeehellInputAction).EventId &&
                 Param == (obj as JeehellInputAction).Param;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

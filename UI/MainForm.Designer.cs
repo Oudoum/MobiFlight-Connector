@@ -833,9 +833,9 @@
         private System.Windows.Forms.TabPage OutputTabPage;
         private System.Windows.Forms.TabPage InputTabPage;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn settingsDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn settingsDataGridViewTextBoxColumn;
         private System.Data.DataTable dataTable1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

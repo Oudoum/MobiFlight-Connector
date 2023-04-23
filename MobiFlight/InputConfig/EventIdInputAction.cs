@@ -77,5 +77,10 @@ namespace MobiFlight.InputConfig
                 EventId == (obj as EventIdInputAction).EventId &&
                 Param == (obj as EventIdInputAction).Param;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

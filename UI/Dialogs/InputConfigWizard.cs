@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace MobiFlight.UI.Dialogs
@@ -20,7 +21,7 @@ namespace MobiFlight.UI.Dialogs
             public Color BorderColor;
         }
 
-        public event EventHandler PreconditionTreeNodeChanged;
+        //public event EventHandler PreconditionTreeNodeChanged;
         public event EventHandler SettingsDialogRequested;
 
         protected bool ScanningForInput = false;
@@ -28,7 +29,7 @@ namespace MobiFlight.UI.Dialogs
         static int lastTabActive = 0;
 
         ExecutionManager _execManager = null;
-        int displayPanelHeight = -1;
+        //int displayPanelHeight = -1;
         List<UserControl> displayPanels = new List<UserControl>();
 
         InputConfigItem config = null;
@@ -52,6 +53,7 @@ namespace MobiFlight.UI.Dialogs
 
         bool IsShown = false;
 
+        [SupportedOSPlatform("windows")]
         public InputConfigWizard(ExecutionManager mainForm,
                              InputConfigItem cfg,
 #if ARCAZE
@@ -143,11 +145,8 @@ namespace MobiFlight.UI.Dialogs
 
         private void _loadPresets()
         {
-            bool isLoaded = true;
-
             if (!System.IO.File.Exists(Properties.Settings.Default.PresetFileOutputs))
             {
-                isLoaded = false;
                 MessageBox.Show(i18n._tr("uiMessageConfigWizard_PresetsNotFound"), i18n._tr("Hint"));
             }
             else
@@ -159,9 +158,8 @@ namespace MobiFlight.UI.Dialogs
                     presetsDataSet.ReadXml(Properties.Settings.Default.PresetFileOutputs);
                     DataRow[] rows = presetDataTable.Select("", "description");
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    isLoaded = false;
                     MessageBox.Show(i18n._tr("uiMessageConfigWizard_ErrorLoadingPresets"), i18n._tr("Hint"));
                 }
             }
@@ -172,6 +170,7 @@ namespace MobiFlight.UI.Dialogs
         /// sync the config wizard with the provided settings from arcaze cache such as available modules, ports, etc.
         /// </summary>
         /// <param name="arcazeCache"></param>
+        [SupportedOSPlatform("windows")]
         public void initWithArcazeCache(ArcazeCache arcazeCache)
         {
             List<ListItem> PreconditionModuleList = new List<ListItem>();
@@ -214,7 +213,7 @@ namespace MobiFlight.UI.Dialogs
             preconditionPanel.SetModules(PreconditionModuleList);
         }
 #endif
-
+        [SupportedOSPlatform("windows")]
         public void initWithoutArcazeCache()
         {
             List<ListItem> PreconditionModuleList = new List<ListItem>();
@@ -303,6 +302,7 @@ namespace MobiFlight.UI.Dialogs
         /// sync current status of form values to config
         /// </summary>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         protected bool _syncFormToConfig()
         {
             config.ModuleSerial = inputModuleNameComboBox.SelectedItem.ToString();
@@ -376,6 +376,7 @@ namespace MobiFlight.UI.Dialogs
             return true;
         }
 
+        [SupportedOSPlatform("windows")]
         private void okButton_Click(object sender, EventArgs e)
         {
             if (!ValidateChildren())
@@ -391,6 +392,7 @@ namespace MobiFlight.UI.Dialogs
             DialogResult = DialogResult.Cancel;
         }
 
+        [SupportedOSPlatform("windows")]
         private void ModuleSerialComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Hide the input shifter / dig. input mux pin dropdown whenever the module changes. 
@@ -492,6 +494,7 @@ namespace MobiFlight.UI.Dialogs
             }
         }
 
+        [SupportedOSPlatform("windows")]
         private DeviceType determineCurrentDeviceType(String serial)
         {
             DeviceType currentInputType = DeviceType.NotSet;
@@ -530,6 +533,7 @@ namespace MobiFlight.UI.Dialogs
             return currentInputType;
         }
 
+        [SupportedOSPlatform("windows")]
         private void inputTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Control panel = null;
@@ -538,7 +542,6 @@ namespace MobiFlight.UI.Dialogs
 
             try
             {
-                bool panelEnabled = true;
                 // get the deviceinfo for the current arcaze
                 ComboBox cb = inputModuleNameComboBox;
                 String serial = SerialNumber.ExtractSerial(cb.SelectedItem.ToString());
@@ -619,6 +622,7 @@ namespace MobiFlight.UI.Dialogs
             }
         }
 
+        [SupportedOSPlatform("windows")]
         void displayLedAddressComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cb = inputModuleNameComboBox;
@@ -738,12 +742,14 @@ namespace MobiFlight.UI.Dialogs
             IsShown = true;
         }
 
+        [SupportedOSPlatform("windows")]
         private void InputConfigWizard_FormClosing(object sender, FormClosingEventArgs e)
         {
             DeactivateScanForInputMode();
             groupBoxInputSettings.Dispose();
         }
 
+        [SupportedOSPlatform("windows")]
         private void ScanForInputButton_Click(object sender, EventArgs e)
         {
             if (!ScanningForInput)
@@ -755,6 +761,7 @@ namespace MobiFlight.UI.Dialogs
             }
         }
 
+        [SupportedOSPlatform("windows")]
         private void ActivateScanForInputMode()
         {
             ScanningForInput = true;
@@ -766,6 +773,7 @@ namespace MobiFlight.UI.Dialogs
             _execManager.GetJoystickManager().OnButtonPressed += ScanforInput_OnButtonPressed;
         }
 
+        [SupportedOSPlatform("windows")]
         private void DeactivateScanForInputMode()
         {
             ScanningForInput = false;
@@ -787,6 +795,7 @@ namespace MobiFlight.UI.Dialogs
         // into the ScanforInput_OnButtonPressed method
         delegate void ScanforInput_OnButtonPressedCallback(object sender, InputEventArgs e);
 
+        [SupportedOSPlatform("windows")]
         private void ScanforInput_OnButtonPressed(object sender, InputEventArgs e)
         {
             if (!InputThresholdIsExceeded(e)) return;

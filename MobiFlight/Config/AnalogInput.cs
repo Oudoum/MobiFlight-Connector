@@ -60,5 +60,10 @@ namespace MobiFlight.Config
         {
             return Type + ":" + Name + " Pin:" + Pin + " Sensitivity:" + Sensitivity;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

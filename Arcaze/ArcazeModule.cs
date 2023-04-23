@@ -18,11 +18,11 @@ namespace MobiFlight
         /// <summary>
         /// Gets raised whenever connection is close
         /// </summary>
-        public event EventHandler OnClose;
+        //public event EventHandler OnClose;
         /// <summary>
         /// Gets raised whenever connection is established
         /// </summary>
-        public event EventHandler OnConnect;
+        //public event EventHandler OnConnect;
         /// <summary>
         /// Gets raised whenever connection is lost
         /// </summary>
@@ -307,7 +307,7 @@ namespace MobiFlight
             {
                 throw e;
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 // do nothing
                 // maybe log this some time in the future
@@ -360,12 +360,12 @@ namespace MobiFlight
                     );
                 }
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 // do nothing
                 // maybe log this some time in the future                
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 this.ConnectionLost(this, new EventArgs());
             }

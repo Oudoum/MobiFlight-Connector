@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobiFlight.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,10 @@ namespace MobiFlight.xplane
     {
         public event EventHandler Closed;
         public event EventHandler Connected;
-        public event EventHandler ConnectionLost;
+        //public event EventHandler ConnectionLost;
         public event EventHandler OnUpdateFrequencyPerSecondChanged;
 
-        private bool _simConnectConnected = false;
+        //private bool _simConnectConnected = false;
         private bool _connected = false;
         private int _updateFrequencyPerSecond = 10;
         public int UpdateFrequencyPerSecond { 
@@ -30,6 +31,19 @@ namespace MobiFlight.xplane
         XPlaneConnector.XPlaneConnector Connector = null;
 
         Dictionary<String, DataRefElement> SubscribedDataRefs = new Dictionary<String, DataRefElement>();
+
+        event EventHandler CacheInterface.ConnectionLost
+        {
+            add
+            {
+                throw new NotImplementedException();
+            }
+
+            remove
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public bool Connect()
         {

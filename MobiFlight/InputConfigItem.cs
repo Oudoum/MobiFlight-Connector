@@ -139,7 +139,6 @@ namespace MobiFlight
             */
             if (reader.LocalName == "preconditions")
             {
-                bool atPosition = false;
                 // read precondition settings if present
                 if (reader.ReadToDescendant("precondition"))
                 {
@@ -160,7 +159,6 @@ namespace MobiFlight
 
             if (reader.LocalName == "configrefs")
             {
-                bool atPosition = false;
                 // read precondition settings if present
                 if (reader.ReadToDescendant("configref"))
                 {
@@ -350,6 +348,11 @@ namespace MobiFlight
             }
 
             return areSame;
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 }

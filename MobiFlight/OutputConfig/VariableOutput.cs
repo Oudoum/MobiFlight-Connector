@@ -47,5 +47,10 @@ namespace MobiFlight.OutputConfig
             return obj != null && obj is VariableOutput && 
                 this.Variable.Equals((obj as VariableOutput).Variable);
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

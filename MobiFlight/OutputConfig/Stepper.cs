@@ -112,5 +112,10 @@ namespace MobiFlight.OutputConfig
             writer.WriteAttributeString("stepperAcceleration", Acceleration.ToString());
             writer.WriteAttributeString("stepperSpeed", Speed.ToString());
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

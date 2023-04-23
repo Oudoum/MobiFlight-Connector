@@ -121,7 +121,7 @@ namespace MobiFlight
                 js.Connect(Handle); 
                 joysticks.Add(js);
                 js.OnButtonPressed += Js_OnButtonPressed;
-                js.OnAxisChanged += Js_OnAxisChanged;
+                //js.OnAxisChanged += Js_OnAxisChanged;
                 js.OnDisconnected += Js_OnDisconnected;
             }
 

@@ -64,5 +64,10 @@ namespace MobiFlight.InputConfig
 
             return result;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

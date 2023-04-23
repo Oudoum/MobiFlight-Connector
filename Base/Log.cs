@@ -151,7 +151,7 @@ namespace MobiFlight
     public class LogAppenderFile : ILogAppender
     {
         private String FileName = "log.txt";
-        private StreamWriter writer = null;
+        //private StreamWriter writer = null;
         // This delegate enables asynchronous calls for setting
         // the text property on a TextBox control.
         delegate void logCallback(string message, LogSeverity severity);

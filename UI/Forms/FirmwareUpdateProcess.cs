@@ -27,7 +27,7 @@ namespace MobiFlight.UI.Forms
         public int TotalModuleCount { get; set; }
 
         private int NumberOfModulesForFirmwareUpdate = 0;
-        private bool UpdateResult = true;
+        //private bool UpdateResult = true;
 
         public FirmwareUpdateProcess()
         {

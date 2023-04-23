@@ -52,7 +52,7 @@ namespace CommandMessenger.Transport.Serial
         {
             var fileStream = File.Create(_settingsFileName);
             var serializer = new BinaryFormatter();
-            serializer.Serialize(fileStream, serialConnectionManagerSettings);
+            //serializer.Serialize(fileStream, serialConnectionManagerSettings);
             fileStream.Close();
         }
 
@@ -67,7 +67,7 @@ namespace CommandMessenger.Transport.Serial
             {
                 var fileStream = File.OpenRead(_settingsFileName);
                 var deserializer = new BinaryFormatter();
-                serialConnectionManagerSettings = (SerialConnectionManagerSettings)deserializer.Deserialize(fileStream);
+                //serialConnectionManagerSettings = (SerialConnectionManagerSettings)deserializer.Deserialize(fileStream);
                 fileStream.Close();
             }
             return serialConnectionManagerSettings;

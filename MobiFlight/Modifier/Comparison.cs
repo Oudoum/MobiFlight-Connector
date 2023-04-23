@@ -157,7 +157,7 @@ namespace MobiFlight.Modifier
                     result.String = comparisonResult;
                     result.type = FSUIPCOffsetType.String;
                 }
-            } catch(FormatException e)
+            } catch (FormatException)
             {
                 result.type = FSUIPCOffsetType.String;
                 result.String = comparisonResult;
@@ -185,6 +185,11 @@ namespace MobiFlight.Modifier
             }
 
             return result;
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 }

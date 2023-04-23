@@ -89,5 +89,10 @@ namespace MobiFlight.InputConfig
                  Param == (obj as PmdgEventIdInputAction).Param &&
                  AircraftType == (obj as PmdgEventIdInputAction).AircraftType;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

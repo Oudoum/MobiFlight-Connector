@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Configuration;
-using System.Web.UI.Design.WebControls;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -119,7 +117,7 @@ namespace MobiFlight.UI.Panels.Settings
                         {
                             currentVersion = new Version(module.Version != null ? module.Version : "0.0.0");
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             currentVersion = new Version("0.0.0");
                         }
@@ -133,7 +131,7 @@ namespace MobiFlight.UI.Panels.Settings
                     mfModulesTreeView.Nodes.Add(node);
                 }
             }
-            catch (IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
                 // this happens when the modules are connecting
                 mfConfiguredModulesGroupBox.Enabled = false;
@@ -183,7 +181,7 @@ namespace MobiFlight.UI.Panels.Settings
             {
                 module.GenerateNewSerial();
             }
-            catch (FirmwareVersionTooLowException exc)
+            catch (FirmwareVersionTooLowException)
             {
                 MessageBox.Show(i18n._tr("uiMessageSettingsDialogFirmwareVersionTooLowException"), i18n._tr("Hint"));
                 return;
@@ -466,8 +464,6 @@ namespace MobiFlight.UI.Panels.Settings
         /// 
         private TreeNode addDeviceToModule(MobiFlight.Config.BaseDevice device, int pos = -1)
         {
-            bool added = false;
-
             TreeNode ModuleNode = getModuleNode();
             if (ModuleNode == null) return null;
 
@@ -690,7 +686,7 @@ namespace MobiFlight.UI.Panels.Settings
                                 i18n._tr("uiNoI2CPinsDefinedHint"),
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show(i18n._tr("uiMessageNotEnoughPinsMessage"),
                                 i18n._tr("uiMessageNotEnoughPinsHint"),

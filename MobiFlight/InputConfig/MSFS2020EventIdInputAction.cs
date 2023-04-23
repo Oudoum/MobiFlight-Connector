@@ -51,5 +51,10 @@ namespace MobiFlight.InputConfig
             return obj != null && obj is MSFS2020EventIdInputAction &&
                 EventId == (obj as MSFS2020EventIdInputAction).EventId;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

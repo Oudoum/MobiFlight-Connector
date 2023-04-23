@@ -23,9 +23,6 @@ namespace MobiFlight.HubHop
             if (!System.IO.File.Exists(PresetFile)) return;
 
             string[] lines = System.IO.File.ReadAllLines(PresetFile);
-            
-            uint EventIdx = 0;
-
             foreach (string line in lines)
             {
                 if (line.StartsWith("//")) continue;

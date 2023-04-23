@@ -38,7 +38,7 @@ namespace MobiFlight.OutputConfig
                 {
                     OffsetType = (FSUIPCOffsetType)Enum.Parse(typeof(FSUIPCOffsetType), reader["offsetType"]);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     OffsetType = FSUIPCOffsetType.Integer;
                 }
@@ -93,6 +93,11 @@ namespace MobiFlight.OutputConfig
                 Size = this.Size,
                 BcdMode = this.BcdMode
             };
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 }

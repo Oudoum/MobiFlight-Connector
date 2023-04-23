@@ -145,8 +145,6 @@ namespace MobiFlight.UI.Panels.Settings
                 settingsToSave = settings;
             }
 
-            bool hasChanged = false;
-
             if (settingsToSave == null)
             {
                 settingsToSave = new ArcazeModuleSettings() { serial = serial };

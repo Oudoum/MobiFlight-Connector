@@ -68,5 +68,10 @@ namespace MobiFlight.InputConfig
                 Shift == (obj as KeyInputAction).Shift &&
                 Control == (obj as KeyInputAction).Control;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

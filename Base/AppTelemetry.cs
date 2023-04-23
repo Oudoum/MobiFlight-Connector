@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MobiFlight.Base
 {
+    [SupportedOSPlatform("windows")]
     public sealed class AppTelemetry
     {
         private static readonly AppTelemetry client = new AppTelemetry();
@@ -33,7 +35,9 @@ namespace MobiFlight.Base
         {
             // Issue #1168: Remove the InstrumentationKey from here and move it to the ApplicationInsights.config
             // file based on the instructions in https://github.com/microsoft/ApplicationInsights-dotnet/issues/2560.
+#pragma warning disable CS0618 // Type or member is obsolete
             TelemetryConfiguration configuration = TelemetryConfiguration.Active;
+#pragma warning restore CS0618 // Type or member is obsolete
 #if (!DEBUG)
             configuration.DisableTelemetry = !enabled;
 #else
@@ -155,6 +159,7 @@ namespace MobiFlight.Base
         }
     }
 
+    [SupportedOSPlatform("windows")]
     public class LogAppenderInsights : ILogAppender
     {        
         public LogAppenderInsights()

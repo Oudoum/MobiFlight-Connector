@@ -5,11 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MobiFlight.UI.Panels.OutputWizard
 {
+    [SupportedOSPlatform("windows")]
     public partial class DisplayPanel : UserControl
     {
         public event EventHandler<EventArgs> TestModeStopRequested;
@@ -686,7 +688,7 @@ namespace MobiFlight.UI.Panels.OutputWizard
                 stepperPanel.SetStepperProfile(stepper.Profile);
                 stepperPanel.ShowManualCalibration(!stepper.HasAutoZero);
             }
-            catch (IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
                 // the module with that serial is currently not connected
                 // so we cannot lookup anything sensible
@@ -734,8 +736,6 @@ namespace MobiFlight.UI.Panels.OutputWizard
             ComboBox cb = displayModuleNameComboBox;
             String serial = SerialNumber.ExtractSerial(cb.SelectedItem.ToString());
             MobiFlightModule module = _execManager.getMobiFlightModuleCache().GetModuleBySerial(serial);
-            bool pwmSupport = false;
-
             int numModules = 0;
             foreach (IConnectedDevice device in module.GetConnectedDevices())
             {

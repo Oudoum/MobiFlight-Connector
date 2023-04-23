@@ -63,5 +63,10 @@ namespace MobiFlight.Config
         {
             return Type + ":" + Name + " PinLeft:" + PinLeft + " PinRight:" + PinRight + " EncoderType:" + EncoderType;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -73,7 +73,7 @@ namespace MobiFlight.UI.Panels.Action
 
                     fsuipcPresetComboBox.SelectedIndex = 0;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     isLoaded = false;
                     MessageBox.Show(i18n._tr("uiMessageConfigWizard_ErrorLoadingPresets"), i18n._tr("Hint"));

@@ -115,7 +115,7 @@ namespace MobiFlight.UI.Panels.Action
                         // Maybe I add grouping later.
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     isLoaded = false;
                     MessageBox.Show(i18n._tr("uiMessageConfigWizard_ErrorLoadingPresets"), i18n._tr("Hint"));
@@ -140,7 +140,7 @@ namespace MobiFlight.UI.Panels.Action
 
             try { 
                 MouseEventComboBox.SelectedValue = eventIdInputAction.Param.ToString();
-            } catch (Exception e)
+            } catch (Exception)
             {
                 MouseEventComboBox.SelectedValue = "0"; // this is the custom param default value.
                 // this will fail if we have a custom param that doesn't show in the list.

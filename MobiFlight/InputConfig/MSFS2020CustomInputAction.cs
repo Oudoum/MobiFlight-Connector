@@ -89,5 +89,10 @@ namespace MobiFlight.InputConfig
                 ((PresetId == null && (obj as MSFS2020CustomInputAction).PresetId == null) || 
                  (PresetId == (obj as MSFS2020CustomInputAction).PresetId));
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

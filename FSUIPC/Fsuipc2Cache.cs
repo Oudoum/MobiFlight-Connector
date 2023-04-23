@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using FSUIPC;
+using System.Runtime.Versioning;
 
 namespace MobiFlight.FSUIPC
 {
+    [SupportedOSPlatform("windows")]
     public class Fsuipc2Cache : FSUIPCCacheInterface
     {
 
@@ -100,7 +102,7 @@ namespace MobiFlight.FSUIPC
                     this.Closed(this, new EventArgs());
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -115,10 +117,10 @@ namespace MobiFlight.FSUIPC
                 {
                     FSUIPCConnection.Process();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     this.ConnectionLost(this, new EventArgs());
-                    throw e;
+                    throw;
                 }
                __isProcessed = true;
             }
@@ -142,10 +144,10 @@ namespace MobiFlight.FSUIPC
                         {
                             FSUIPCConnection.Process();
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
                             this.ConnectionLost(this, new EventArgs());
-                            throw e;
+                            throw;
                         }                            
                     }
                     result = Convert.ToInt64(__cacheByte[offset].Value);
@@ -159,10 +161,10 @@ namespace MobiFlight.FSUIPC
                         {
                             FSUIPCConnection.Process();
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
                             this.ConnectionLost(this, new EventArgs());
-                            throw e;
+                            throw;
                         }                            
                     }
                     result = Convert.ToInt64(__cacheShort[offset].Value);
@@ -176,10 +178,10 @@ namespace MobiFlight.FSUIPC
                         {
                             FSUIPCConnection.Process();
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
                             this.ConnectionLost(this, new EventArgs());
-                            throw e;
+                            throw;
                         }                            
                     }
                     result =  Convert.ToInt64(__cacheInt[offset].Value);
@@ -193,10 +195,10 @@ namespace MobiFlight.FSUIPC
                         {
                             FSUIPCConnection.Process();
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
                             this.ConnectionLost(this, new EventArgs());
-                            throw e;
+                            throw;
                         }
                     }
                     result = __cacheLong[offset].Value;
@@ -288,10 +290,10 @@ namespace MobiFlight.FSUIPC
                 {
                     FSUIPCConnection.Process();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     this.ConnectionLost(this, new EventArgs());
-                    throw e;
+                    throw;
                 }
             }
             result = __cacheLong[offset].Value;
@@ -313,10 +315,10 @@ namespace MobiFlight.FSUIPC
                 {
                     FSUIPCConnection.Process();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     this.ConnectionLost(this, new EventArgs());
-                    throw e;
+                    throw;
                 }
             }
             result = __cacheFloat[offset].Value;
@@ -338,10 +340,10 @@ namespace MobiFlight.FSUIPC
                 {
                     FSUIPCConnection.Process();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     this.ConnectionLost(this, new EventArgs());
-                    throw e;
+                    throw;
                 }
             }
             result = __cacheDouble[offset].Value;
@@ -364,10 +366,10 @@ namespace MobiFlight.FSUIPC
                 {
                     FSUIPCConnection.Process();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     this.ConnectionLost(this, new EventArgs());
-                    throw e;
+                    throw;
                 }
             }
             result = __cacheString[offset].Value;
@@ -449,10 +451,10 @@ namespace MobiFlight.FSUIPC
             try {
                 FSUIPCConnection.Process("macro");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 this.ConnectionLost(this, new EventArgs());
-                throw e;
+                throw;
             }
         }
 
@@ -461,10 +463,10 @@ namespace MobiFlight.FSUIPC
             try {
                 FSUIPCConnection.SendControlToFS(eventID, param);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 this.ConnectionLost(this, new EventArgs());
-                throw e;
+                throw;
             }
         }
 
@@ -488,10 +490,10 @@ namespace MobiFlight.FSUIPC
                     lastProcessedMs = milliseconds;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 this.ConnectionLost(this, new EventArgs());
-                throw e;
+                throw;
             }
         }
 

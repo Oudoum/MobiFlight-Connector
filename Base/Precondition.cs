@@ -167,8 +167,6 @@ namespace MobiFlight
 
         public bool Evaluate(MobiFlightVariable value)
         {
-            var result = false;
-
             var comparison = new Comparison();
             comparison.Active = true;
             comparison.Value = PreconditionValue;
@@ -239,6 +237,11 @@ namespace MobiFlight
             }
 
             return result;
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 }

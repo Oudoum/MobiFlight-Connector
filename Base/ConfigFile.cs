@@ -133,7 +133,7 @@ namespace MobiFlight
                 if (xmlConfig.DocumentElement == null) OpenFile();
                 result = getConfig("/MobiflightConnector/outputs");
             }
-            catch (InvalidExpressionException e)
+            catch (InvalidExpressionException)
             {
                 fallback = true;
             }
@@ -150,7 +150,7 @@ namespace MobiFlight
                 {
                     result = getConfig("/MobiflightConnector");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     fallback = true;
                 }
@@ -164,7 +164,7 @@ namespace MobiFlight
                 {
                     result = getConfig("/ArcazeUsbConnector");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw new Exception("Error: Loading config");
                 }

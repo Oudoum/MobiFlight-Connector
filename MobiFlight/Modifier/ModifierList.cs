@@ -196,5 +196,10 @@ namespace MobiFlight.Modifier
 
             return clone;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

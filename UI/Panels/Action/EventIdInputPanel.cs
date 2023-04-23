@@ -68,7 +68,7 @@ namespace MobiFlight.UI.Panels.Action
                         fsuipcPresetComboBox.Items.Add(row["Label"]);
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     isLoaded = false;
                     MessageBox.Show(i18n._tr("uiMessageConfigWizard_ErrorLoadingPresets"), i18n._tr("Hint"));

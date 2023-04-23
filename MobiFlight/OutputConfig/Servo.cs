@@ -68,5 +68,10 @@ namespace MobiFlight.OutputConfig
                 this.Max == (obj as Servo).Max &&
                 this.MaxRotationPercent == (obj as Servo).MaxRotationPercent;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

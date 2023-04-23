@@ -63,5 +63,10 @@ namespace MobiFlight.Config
         {
             return Type + ":" + Name + " Cols:" + Cols + " Lines:" + Lines + " Address:" + Address;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

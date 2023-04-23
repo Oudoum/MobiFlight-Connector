@@ -223,7 +223,7 @@ namespace MobiFlight
             {
                 result = Modules[serial].getValue(portAndPin, trigger);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //throw e;
                 //this.ConnectionLost(this, new EventArgs());
@@ -251,12 +251,12 @@ namespace MobiFlight
             {
                 throw e;
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 // do nothing
                 // maybe log this some time in the future
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //throw e;
                 //this.ConnectionLost(this, new EventArgs());

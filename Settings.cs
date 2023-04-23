@@ -11,9 +11,9 @@
         public Settings() {
             // // Heben Sie die  Auskommentierung der unten angezeigten Zeilen auf, um Ereignishandler zum Speichern und Ändern von Einstellungen hinzuzufügen:
             //
-            // this.SettingChanging += this.SettingChangingEventHandler;
+            //this.SettingChanging += this.SettingChangingEventHandler;
             //
-            // this.SettingsSaving += this.SettingsSavingEventHandler;
+            //this.SettingsSaving += this.SettingsSavingEventHandler;
             //
         }
         

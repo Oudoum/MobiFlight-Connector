@@ -109,5 +109,10 @@ namespace MobiFlight.Base
 
             return areEqual;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

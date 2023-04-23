@@ -54,5 +54,9 @@ namespace MobiFlight.Config
             return Type + ":" + Name + " Pin:" + Pin;
         }
 
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

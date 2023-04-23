@@ -13,7 +13,7 @@ namespace MobiFlight.UI.Panels.Settings
         private InputMultiplexer         inputMultiplexer;
         private MFMultiplexerDriverSubPanel selectorPanel; 
         
-        private int MAX_MODULES = 2;            // Only possible values: 1 module for HCT4051, 2 for HCT4067
+        //private int MAX_MODULES = 2;            // Only possible values: 1 module for HCT4051, 2 for HCT4067
         private const string NA_STRING = "N/A";
         
         public event EventHandler   Changed;

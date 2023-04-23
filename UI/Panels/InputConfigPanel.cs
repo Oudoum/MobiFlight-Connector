@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFlight.UI.Dialogs;
 using MobiFlight.Base;
+using System.Runtime.Versioning;
 
 namespace MobiFlight.UI.Panels
 {
+    [SupportedOSPlatform("windows")]
     public partial class InputConfigPanel : UserControl
     {
         public event EventHandler SettingsChanged;
@@ -484,7 +486,7 @@ namespace MobiFlight.UI.Panels
 
         private void dataGridViewConfig_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            e.Control.ContextMenu = new ContextMenu();
+            e.Control.ContextMenuStrip = new ContextMenuStrip();
             //e.Control.ContextMenuStrip = inputsDataGridViewContextMenuStrip;
         }
 

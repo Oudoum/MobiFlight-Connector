@@ -125,7 +125,7 @@ namespace MobiFlight.InputConfig
                     Int16 cByte = (Int16)cache.getValue(FSUIPC.Offset, FSUIPC.Size);
                     if (sValue == 1)
                     {
-                        sValue = (Int16)(cByte | FSUIPC.Mask);
+                        sValue = (Int16)(cByte | (Int16)FSUIPC.Mask);
                     }
                     else
                     {
@@ -145,7 +145,7 @@ namespace MobiFlight.InputConfig
                         Int32 cByte = (Int32)cache.getValue(FSUIPC.Offset, FSUIPC.Size);
                         if (iValue == 1)
                         {
-                            iValue = (Int32)(cByte | FSUIPC.Mask);
+                            iValue = (Int32)(cByte | (Int32)FSUIPC.Mask);
                         }
                         else
                         {
@@ -192,6 +192,11 @@ namespace MobiFlight.InputConfig
                 FSUIPC.Equals((obj as FsuipcOffsetInputAction).FSUIPC) &&
                 Value == (obj as FsuipcOffsetInputAction).Value &&
                 Transform.Equals((obj as FsuipcOffsetInputAction).Transform);
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 }

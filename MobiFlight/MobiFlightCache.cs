@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using System.Globalization;
 using MobiFlight.Config;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace MobiFlight
 {
@@ -36,7 +37,7 @@ namespace MobiFlight
         /// <summary>
         /// Gets raised whenever connection is lost
         /// </summary>
-        public event EventHandler ConnectionLost;
+        //public event EventHandler ConnectionLost;
         /// <summary>
         /// Gets raised whenever connection is established
         /// </summary>
@@ -164,6 +165,7 @@ namespace MobiFlight
             return connectedComModules;
         }
 
+        [SupportedOSPlatform("windows")]
         public async Task<IEnumerable<MobiFlightModule>> GetModulesAsync()
         {
             if (!isConnected())
@@ -178,6 +180,7 @@ namespace MobiFlight
             return Modules.Values;
         }
 
+        [SupportedOSPlatform("windows")]
         private static List<PortDetails> getSupportedPorts()
         {
             var portNameRegEx = "\\(.*\\)";
@@ -273,7 +276,7 @@ namespace MobiFlight
             return result;
         }
 
-
+        [SupportedOSPlatform("windows")]
         private async  Task<List<MobiFlightModuleInfo>> LookupAllConnectedComModulesAsync()
         {
             Log.Instance.log("Start looking up connected modules.", LogSeverity.Debug);
@@ -356,6 +359,7 @@ namespace MobiFlight
             return ports;
         }
 
+        [SupportedOSPlatform("windows")]
         public async Task<bool> connectAsync(bool force=false)
         {
             if (isConnected() && force) { 
@@ -528,14 +532,14 @@ namespace MobiFlight
             {
                 throw e;
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 // do nothing
                 // maybe log this some time in the future
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
                 //this.ConnectionLost(this, new EventArgs());
             }
         } //setValue()

@@ -202,14 +202,15 @@ namespace MobiFlight.UI.Panels.Config
             }
             else
             {
-                HubHopType hubhopType = HubHopType.Output;
-                if (Mode==HubHopPanelMode.Input) hubhopType = HubHopType.AllInputs;
+                //HubHopType hubhopType = HubHopType.Output;
+                if (Mode == HubHopPanelMode.Input) 
+                    //hubhopType = HubHopType.AllInputs;
                 try
                 {
                     PresetList.Load(PresetFile);
                     FilterPresetList();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     isLoaded = false;
                     MessageBox.Show(i18n._tr("uiMessageConfigWizard_ErrorLoadingPresets"), i18n._tr("Hint"));

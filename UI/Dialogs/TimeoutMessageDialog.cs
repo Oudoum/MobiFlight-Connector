@@ -39,12 +39,12 @@ namespace MobiFlight.UI.Dialogs
             set { checkBox1.Checked = value;  } 
         }
 
-        new public static DialogResult Show(string Message, String Title)
+        public static DialogResult Show(string Message, String Title)
         {
             return Show(Message, Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        new public static DialogResult Show(string Message, String Title, MessageBoxButtons buttons, MessageBoxIcon icon)
+        public static DialogResult Show(string Message, String Title, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
             TimeoutMessageDialog tmd = new TimeoutMessageDialog();
             tmd.StartPosition = FormStartPosition.CenterParent;
@@ -54,7 +54,7 @@ namespace MobiFlight.UI.Dialogs
             return tmd.ShowDialog(tmd.Parent);
         }
 
-        new public static DialogResult Show(Control Parent, string Message, String Title, MessageBoxButtons buttons, MessageBoxIcon icon)
+        public static DialogResult Show(Control Parent, string Message, String Title, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
             TimeoutMessageDialog tmd = new TimeoutMessageDialog();
             tmd.Parent = Parent;

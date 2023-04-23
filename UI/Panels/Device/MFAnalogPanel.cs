@@ -14,8 +14,8 @@ namespace MobiFlight.UI.Panels.Settings.Device
         // Means that the analog value must be > then the sensitivity value provided.
         // As higher the value, as less sensitive the analog device will be.
         static int DEFAULT_SENSITIVITY = 5;
-        static int MIN_SENSITIVITY = 1;
-        static int MAX_SENSITIVITY = 20;
+        //static int MIN_SENSITIVITY = 1;
+        //static int MAX_SENSITIVITY = 20;
         static String DEFAULT_SENSITIVITY_STRING = DEFAULT_SENSITIVITY.ToString();
         private MobiFlight.Config.AnalogInput analog;
         private bool initialized = false;        

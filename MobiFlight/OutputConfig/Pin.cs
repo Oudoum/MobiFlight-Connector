@@ -66,5 +66,10 @@ namespace MobiFlight.OutputConfig
             clone.DisplayPinPWM = DisplayPinPWM;
             return clone;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

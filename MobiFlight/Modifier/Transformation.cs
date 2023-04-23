@@ -72,7 +72,7 @@ namespace MobiFlight.Modifier
                     string tmpValue = Apply(value.Float64, configRefs);
                     if (Double.TryParse(tmpValue, out value.Float64))
                     {
-                        value.Float64 = value.Float64;
+                        //value.Float64 = value.Float64;
                     } 
                     else 
                     {
@@ -136,6 +136,11 @@ namespace MobiFlight.Modifier
             if (SubStrEnd > value.Length) length = value.Length - SubStrStart;
 
             return value.Substring(SubStrStart, length);
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 }

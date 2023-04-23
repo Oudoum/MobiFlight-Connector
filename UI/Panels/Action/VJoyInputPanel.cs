@@ -61,7 +61,7 @@ namespace MobiFlight.UI.Panels.Action
             {
                 getVJoyInformation(vJoyInputAction.vJoyID);
             }
-            catch (VJoyNotEnabledException ex)
+            catch (VJoyNotEnabledException)
             {
                 setNotEnabled();
                 return;
@@ -128,7 +128,7 @@ namespace MobiFlight.UI.Panels.Action
                 uint id = UInt16.Parse(ComboBoxID.SelectedItem.ToString());
                 getVJoyInformation(id);
             }
-            catch (VJoyNotEnabledException ex)
+            catch (VJoyNotEnabledException)
             {
                 setNotEnabled();
             }

@@ -171,5 +171,10 @@ namespace MobiFlight.InputConfig
                     (onRightFast != null && onRightFast.Equals((obj as EncoderInputConfig).onRightFast))
                 );
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

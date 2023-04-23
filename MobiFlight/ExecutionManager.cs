@@ -15,9 +15,12 @@ using MobiFlight.InputConfig;
 using MobiFlight.xplane;
 using System.Globalization;
 using Newtonsoft.Json.Linq;
+using Microsoft.FlightSimulator.SimConnect;
+using System.Runtime.Versioning;
 
 namespace MobiFlight
 {
+    [SupportedOSPlatform("windows")]
     public class ExecutionManager
     {
         public event EventHandler OnExecute;
@@ -91,6 +94,7 @@ namespace MobiFlight
 
         FlightSimType LastDetectedSim = FlightSimType.NONE;
 
+        [SupportedOSPlatform("windows")]
         public ExecutionManager(DataGridView dataGridViewConfig, DataGridView inputsDataGridView, IntPtr handle)
         {
             this.dataGridViewConfig = dataGridViewConfig;
@@ -107,7 +111,7 @@ namespace MobiFlight
             simConnectCache.Closed += new EventHandler(simConnect_Closed);
 #endif
 
-            xplaneCache.ConnectionLost += new EventHandler(simConnect_ConnectionLost);
+            //xplaneCache.ConnectionLost += new EventHandler(simConnect_ConnectionLost);
             xplaneCache.Connected += new EventHandler(simConnect_Connected);
             xplaneCache.Closed += new EventHandler(simConnect_Closed);
 
@@ -120,7 +124,7 @@ namespace MobiFlight
 
             mobiFlightCache.Connected += new EventHandler(ArcazeCache_Connected);
             mobiFlightCache.Closed += new EventHandler(ArcazeCache_Closed);
-            mobiFlightCache.ConnectionLost += new EventHandler(ArcazeCache_ConnectionLost);
+            //mobiFlightCache.ConnectionLost += new EventHandler(ArcazeCache_ConnectionLost);
             mobiFlightCache.LookupFinished += new EventHandler(mobiFlightCache_LookupFinished);
 
             timer.Tick += new EventHandler(timer_Tick);
@@ -275,7 +279,7 @@ namespace MobiFlight
             joystickManager.Stop();
             ClearErrorMessages();
         }
-
+        [SupportedOSPlatform("windows")]
         public void AutoConnectStart()
         {
             autoConnectTimer.Start();
@@ -1006,6 +1010,7 @@ namespace MobiFlight
         /// auto connect is only done if current timer is not running since we suppose that an established
         /// connection was already available before the timer was started
         /// </remarks>
+        [SupportedOSPlatform("windows")]
         async void AutoConnectTimer_TickAsync(object sender, EventArgs e)
         {
             if (_autoConnectTimerRunning) return;
@@ -1334,8 +1339,8 @@ namespace MobiFlight
                             	inputCache[inputKey].Add(new Tuple<InputConfigItem, DataGridViewRow>(cfg, gridViewRow));
                         	}
                     	}
-                    	catch (Exception ex)
-                    	{
+                    	catch (Exception)
+                        {
                         	// probably the last row with no settings object 
                         	continue;
                     	}
@@ -1445,7 +1450,7 @@ namespace MobiFlight
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // probably the last row with no settings object 
                     continue;

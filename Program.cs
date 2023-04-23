@@ -5,9 +5,11 @@ using System.Threading;
 using MobiFlight.UI;
 using System.Configuration;
 using System.Globalization;
+using System.Runtime.Versioning;
 
 namespace MobiFlight
 {
+    [SupportedOSPlatform("windows")]
     static class Program
     {
         static Mutex mutex = new Mutex(true, "{57699317-1D72-4B54-82BC-CF6B38254550}");
@@ -29,6 +31,7 @@ namespace MobiFlight
                 CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
                 
                 Application.EnableVisualStyles();
+                Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.SetCompatibleTextRenderingDefault(true);
                 Application.Run(new MainForm());
                 mutex.ReleaseMutex();

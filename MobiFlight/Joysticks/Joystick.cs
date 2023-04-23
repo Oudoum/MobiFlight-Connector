@@ -55,7 +55,7 @@ namespace MobiFlight
         public static readonly string[] AxisNames = { "X", "Y", "Z", "RotationX", "RotationY", "RotationZ", "Slider1", "Slider2" };
 
         public event ButtonEventHandler OnButtonPressed;
-        public event ButtonEventHandler OnAxisChanged;
+        //public event ButtonEventHandler OnAxisChanged;
         public event EventHandler OnDisconnected;
 
         private readonly List<JoystickDevice> Buttons = new List<JoystickDevice>();

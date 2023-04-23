@@ -100,7 +100,7 @@ namespace MobiFlight.UI.Panels.Action
                         GroupComboBox.Items.Add(key);
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     isLoaded = false;
                     MessageBox.Show(i18n._tr("uiMessageConfigWizard_ErrorLoadingPresets"), i18n._tr("Hint"));

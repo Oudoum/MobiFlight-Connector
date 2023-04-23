@@ -57,7 +57,7 @@ namespace MobiFlight
         public bool HasAutoZero { get; set; }
         public bool CompassMode { get; set; }
 
-        protected DateTime lastCall;
+        //protected DateTime lastCall;
         protected int lastValue;
         protected int outputValue;
         protected bool moveCalled = false;

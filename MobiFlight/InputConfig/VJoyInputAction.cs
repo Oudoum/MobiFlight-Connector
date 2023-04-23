@@ -117,5 +117,10 @@ namespace MobiFlight.InputConfig
                  buttonComand == (obj as VJoyInputAction).buttonComand &&
                  sendValue == (obj as VJoyInputAction).sendValue;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

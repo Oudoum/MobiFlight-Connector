@@ -118,5 +118,10 @@ namespace MobiFlight.InputConfig
                     (onRelease != null && onRelease.Equals((obj as ButtonInputConfig).onRelease))
                 );
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

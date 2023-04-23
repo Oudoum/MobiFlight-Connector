@@ -131,7 +131,7 @@ namespace MobiFlight.UI.Panels
                 if (sender != stepperTestValueTextBox)
                     e.Cancel = !(v > 0);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 e.Cancel = true;
                 displayError(sender as Control, i18n._tr("uiMessageValidationMustBeNumber"));

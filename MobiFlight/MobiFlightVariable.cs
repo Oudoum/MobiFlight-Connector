@@ -51,5 +51,10 @@ namespace MobiFlight
                 this.Text == (obj as MobiFlightVariable).Text &&
                 this.Expression == (obj as MobiFlightVariable).Expression;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

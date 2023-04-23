@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Windows.Forms;
 
 namespace MobiFlight.UI.Dialogs
 {
+    [SupportedOSPlatform("windows")]
     public partial class AboutForm : Form
     {
         public AboutForm()
@@ -28,7 +30,7 @@ namespace MobiFlight.UI.Dialogs
             String Link = (sender as LinkLabel).Text;
 
             if ((sender as LinkLabel).Text.Contains("@")) Link = "mailto:" + Link;
-            System.Diagnostics.Process.Start(Link);
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo() { FileName = Link, UseShellExecute = true });
         }
     }
 }

@@ -46,5 +46,10 @@ namespace MobiFlight.xplane
             return
                 this.Path == (obj as XplaneDataRef).Path;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

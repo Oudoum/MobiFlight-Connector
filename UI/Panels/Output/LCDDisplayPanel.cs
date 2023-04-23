@@ -13,10 +13,10 @@ namespace MobiFlight.UI.Panels
 {
     public partial class LCDDisplayPanel : UserControl
     {
-        DataView dv;
+        //DataView dv;
         int Cols = 16;
         int Lines = 2;
-        static byte MAX_CONFIG_REFS = 6;
+        //static byte MAX_CONFIG_REFS = 6;
         static string[] CONFIG_REFS_PLACEHOLDER = { "#", "§", "&", "?", "@", "^", "%" };
 
         public LCDDisplayPanel()

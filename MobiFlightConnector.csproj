@@ -1,20 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build"
-  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FAD08758-74C5-4DBA-9BC5-1AD98A0FE87B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MobiFlight</RootNamespace>
     <AssemblyName>MFConnector</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Temp\MFConnector\</PublishUrl>
     <Install>true</Install>
@@ -40,9 +30,13 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>false</GenerateManifests>
@@ -50,36 +44,23 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <ApplicationIcon>mobiflight.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;MOBIFLIGHT DEBUG SIMCONNECT ARCAZE</DefineConstants>
     <DocumentationFile>bin\Debug\MFConnector.xml</DocumentationFile>
     <WarningLevel>2</WarningLevel>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;CODE_ANALYSIS;MOBIFLIGHT RELEASE SIMCONNECT ARCAZE</DefineConstants>
-    <Optimize>true</Optimize>
     <WarningLevel>2</WarningLevel>
     <DebugType>none</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <Prefer32Bit>false</Prefer32Bit>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
@@ -87,39 +68,25 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug-Mobiflight\</OutputPath>
     <DefineConstants>TRACE;DEBUG;MOBIFLIGHT DEBUG SIMCONNECT</DefineConstants>
     <DocumentationFile>bin\Debug-Mobiflight\MFConnector.xml</DocumentationFile>
     <WarningLevel>2</WarningLevel>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-    <Prefer32Bit>false</Prefer32Bit>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <OutputPath>bin\x64\Release-Mobiflight\</OutputPath>
     <DefineConstants>TRACE;MOBIFLIGHT RELEASE SIMCONNECT</DefineConstants>
-    <Optimize>true</Optimize>
     <WarningLevel>2</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>
@@ -133,1342 +100,326 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\ArcazeHid.dll</HintPath>
     </Reference>
-    <Reference Include="fsuipcClient, Version=3.3.3.403, Culture=neutral, PublicKeyToken=7e7559b53e380b17, processorArchitecture=MSIL">
-      <HintPath>packages\FSUIPCClientDLL.3.3.3\lib\net462\fsuipcClient.dll</HintPath>
-    </Reference>
-    <Reference Include="HidSharp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\HidSharp.2.1.0\lib\net35\HidSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\lib\net452\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ApplicationInsights.2.21.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.FlightSimulator.SimConnect, Version=10.0.61259.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
       <HintPath>SimConnectFSX\Microsoft.FlightSimulator.SimConnect.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.WebView2.1.0.1518.46\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.WebView2.1.0.1518.46\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.WebView2.1.0.1518.46\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="NCalc">
       <HintPath>lib\NCalc.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net, Version=3.0.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>packages\protobuf-net.3.1.33\lib\net462\protobuf-net.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>packages\protobuf-net.Core.3.1.33\lib\net462\protobuf-net.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.DirectInput, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <HintPath>packages\SharpDX.DirectInput.4.2.0\lib\net45\SharpDX.DirectInput.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.7.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
     <Reference Include="vJoyInterfaceWrap, Version=0.2.1.6, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\vJoyInterfaceWrap.dll</HintPath>
     </Reference>
-    <Reference Include="XPlaneConnector, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\XPlaneConnector.1.3.0\lib\netstandard2.0\XPlaneConnector.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\AutoUpdateChecker.cs" />
-    <Compile Include="Base\CacheInterface.cs" />
-    <Compile Include="Base\ConfigRef.cs" />
-    <Compile Include="Base\ConfigRefList.cs" />
-    <Compile Include="Base\Extensions.cs" />
-    <Compile Include="Base\FullCacheInterface.cs" />
-    <Compile Include="Base\i18n.cs" />
-    <Compile Include="Base\PreconditionList.cs" />
-    <Compile Include="Base\ProgressUpdateEvent.cs" />
-    <Compile Include="Base\SerialNumber.cs" />
-    <Compile Include="Base\AppTelemetry.cs" />
-    <Compile Include="Base\WriteCacheInterface.cs" />
-    <Compile Include="HubHop\HubHopType.cs" />
-    <Compile Include="HubHop\Msfs2020EventIdPresetList.cs" />
-    <Compile Include="MobiFlight\Board.cs" />
-    <Compile Include="MobiFlight\BoardDefinitions.cs" />
-    <Compile Include="MobiFlight\Clipboard.cs" />
-    <Compile Include="MobiFlight\ConfigExtensions.cs" />
-    <Compile Include="MobiFlight\Config\Compatibility\StepperDeprecatedV2.cs" />
-    <Compile Include="MobiFlight\Config\InputMultiplexer.cs" />
-    <Compile Include="MobiFlight\Config\MultiplexerDriver.cs" />
-    <Compile Include="MobiFlight\Config\InputShiftRegister.cs" />
-    <Compile Include="MobiFlight\Config\ShiftRegister.cs" />
-    <Compile Include="MobiFlight\Config\IConfigRefConfigItem.cs" />
-    <Compile Include="MobiFlight\Config\AnalogInput.cs" />
-    <Compile Include="MobiFlight\I2CPinInUseException.cs" />
-    <Compile Include="MobiFlight\I2CPinsNotDefinedException.cs" />
-    <Compile Include="MobiFlight\InputConfig\AnalogInputConfig.cs" />
-    <Compile Include="MobiFlight\InputConfig\InputMultiplexerConfig.cs" />
-    <Compile Include="MobiFlight\InputConfig\InputActionExecutionCache.cs" />
-    <Compile Include="MobiFlight\InputConfig\InputActionFactory.cs" />
-    <Compile Include="MobiFlight\InputConfig\InputShiftRegisterConfig.cs" />
-    <Compile Include="MobiFlight\InputConfig\MSFS2020CustomInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\XplaneInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\VariableInputAction.cs" />
-    <Compile Include="MobiFlight\Joysticks\Joystick.cs" />
-    <Compile Include="MobiFlight\Joysticks\JoystickManager.cs" />
-    <Compile Include="MobiFlight\InputConfig\MSFS2020EventIdInputAction.cs" />
-    <Compile Include="MobiFlight\Joysticks\JoystickDefinition.cs" />
-    <Compile Include="MobiFlight\Joysticks\JoystickInput.cs" />
-    <Compile Include="MobiFlight\Joysticks\JoystickOutput.cs" />
-    <Compile Include="MobiFlight\MaximumDeviceNumberReachedMobiFlightException.cs" />
-    <Compile Include="MobiFlight\MobiFlightAnalogInput.cs" />
-    <Compile Include="MobiFlight\MobiFlightInputMultiplexer.cs" />
-    <Compile Include="MobiFlight\MobiFlightPin.cs" />
-    <Compile Include="MobiFlight\MobiFlightInputShiftRegister.cs" />
-    <Compile Include="MobiFlight\MobiFlightShiftRegister.cs" />
-    <Compile Include="MobiFlight\MobiFlightButton.cs" />
-    <Compile Include="MobiFlight\MobiFlightEncoder.cs" />
-    <Compile Include="MobiFlight\MobiFlightVariable.cs" />
-    <Compile Include="MobiFlight\Modifier\ModifierBase.cs" />
-    <Compile Include="MobiFlight\Modifier\Comparison.cs" />
-    <Compile Include="MobiFlight\Modifier\Blink.cs" />
-    <Compile Include="MobiFlight\Modifier\ModifierList.cs" />
-    <Compile Include="MobiFlight\OutputConfig\FsuipcOffset.cs" />
-    <Compile Include="MobiFlight\OutputConfig\LedModule.cs" />
-    <Compile Include="MobiFlight\OutputConfig\ShiftRegister.cs" />
-    <Compile Include="MobiFlight\OutputConfig\Pin.cs" />
-    <Compile Include="MobiFlight\OutputConfig\Servo.cs" />
-    <Compile Include="MobiFlight\OutputConfig\VariableOutput.cs" />
-    <Compile Include="MobiFlight\OutputConfig\SimConnectValue.cs" />
-    <Compile Include="HubHop\Msfs2020HubhopPresetList.cs" />
-    <Compile Include="MobiFlight\PortDetails.cs" />
-    <Compile Include="SimConnectMSFS\SimConnectCacheInterface.cs" />
-    <Compile Include="SimConnectMSFS\WasmModuleClient.cs" />
-    <Compile Include="SimConnectMSFS\SimConnectDefinitions.cs" />
-    <Compile Include="SimConnectMSFS\WasmModuleUpdater.cs" />
-    <Compile Include="UI\Dialogs\AboutForm.cs">
-      <SubType>Form</SubType>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialogs\AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Arcaze\ArcazeModule.cs" />
-    <Compile Include="Arcaze\ArcazeBcd4056.cs" />
-    <Compile Include="Arcaze\ArcazeCache.cs" />
-    <Compile Include="Arcaze\ArcazeCommandExecutionException.cs" />
-    <Compile Include="Arcaze\ArcazeIoBasic.cs" />
-    <Compile Include="Arcaze\ArcazeLedDigit.cs" />
-    <Compile Include="Arcaze\ArcazeModuleSettings.cs" />
-    <Compile Include="Arcaze\ArcazeModuleInfo.cs" />
-    <Compile Include="FSUIPC\FSUIPCCacheInterface.cs" />
-    <Compile Include="MobiFlight\Config\Encoder.cs" />
-    <Compile Include="MobiFlight\Config\EncoderSingleDetent.cs" />
-    <Compile Include="MobiFlight\Config\LCDDisplay.cs" />
-    <Compile Include="MobiFlight\FlightSim.cs" />
-    <Compile Include="UI\Dialogs\DonateDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\DonateDialog.Designer.cs">
-      <DependentUpon>DonateDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Dialogs\CommunityFeedbackStartupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\CommunityFeedbackStartupForm.Designer.cs">
-      <DependentUpon>CommunityFeedbackStartupForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Dialogs\Msfs2020StartupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\Msfs2020StartupForm.Designer.cs">
-      <DependentUpon>Msfs2020StartupForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Dialogs\TimeoutMessageDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\TimeoutMessageDialog.Designer.cs">
-      <DependentUpon>TimeoutMessageDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Dialogs\TransparentOverlay.cs">
+    <Compile Update="UI\Dialogs\TransparentOverlay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Dialogs\TransparentOverlay.Designer.cs">
-      <DependentUpon>TransparentOverlay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Forms\ArduinoIdePathForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\ArduinoIdePathForm.Designer.cs">
-      <DependentUpon>ArduinoIdePathForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\IFsuipcConfigItem.cs" />
-    <Compile Include="Base\BaseConfigItem.cs" />
-    <Compile Include="UI\Forms\BitMaskEditorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\BitMaskEditorForm.Designer.cs">
-      <DependentUpon>BitMaskEditorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\BooleanConverterConfig.cs" />
-    <Compile Include="UI\Forms\ConfigUploadProgress.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\ConfigUploadProgress.Designer.cs">
-      <DependentUpon>ConfigUploadProgress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Forms\ProgressForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\ProgressForm.Designer.cs">
-      <DependentUpon>ProgressForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Forms\SimConnectLvarsListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\SimConnectLvarsListForm.Designer.cs">
-      <DependentUpon>SimConnectLvarsListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Forms\SimConnectPanelIndexSelectForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\SimConnectPanelIndexSelectForm.Designer.cs">
-      <DependentUpon>SimConnectPanelIndexSelectForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\About\LicenseReferenceControl.cs">
+    <Compile Update="UI\Panels\About\LicenseReferenceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\About\LicenseReferenceControl.Designer.cs">
-      <DependentUpon>LicenseReferenceControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\MSFS2020CustomInputPanel.cs">
+    <Compile Update="UI\Panels\Action\MSFS2020CustomInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\MSFS2020CustomInputPanel.Designer.cs">
-      <DependentUpon>MSFS2020CustomInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\VariableInputPanel.cs">
+    <Compile Update="UI\Panels\Action\VariableInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\VariableInputPanel.Designer.cs">
-      <DependentUpon>VariableInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\MSFS2020InputPanel.cs">
+    <Compile Update="UI\Panels\Action\MSFS2020InputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\MSFS2020InputPanel.Designer.cs">
-      <DependentUpon>MSFS2020InputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\XplaneInputPanel.cs">
+    <Compile Update="UI\Panels\Action\XplaneInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\XplaneInputPanel.Designer.cs">
-      <DependentUpon>XplaneInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\HubHopPresetPanel.cs">
+    <Compile Update="UI\Panels\Config\HubHopPresetPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\HubHopPresetPanel.Designer.cs">
-      <DependentUpon>HubHopPresetPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\PreconditionPanel.cs">
+    <Compile Update="UI\Panels\Config\PreconditionPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\PreconditionPanel.Designer.cs">
-      <DependentUpon>PreconditionPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\VariablePanel.cs">
+    <Compile Update="UI\Panels\Config\VariablePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\VariablePanel.Designer.cs">
-      <DependentUpon>VariablePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\XplaneDataRefPanel.cs">
+    <Compile Update="UI\Panels\Config\XplaneDataRefPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\XplaneDataRefPanel.Designer.cs">
-      <DependentUpon>XplaneDataRefPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFAnalogPanel.cs">
+    <Compile Update="UI\Panels\Device\MFAnalogPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFAnalogPanel.Designer.cs">
-      <DependentUpon>MFAnalogPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\SimConnectPanel.cs">
+    <Compile Update="UI\Panels\Config\SimConnectPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\SimConnectPanel.Designer.cs">
-      <DependentUpon>SimConnectPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\TransformOptionsGroup.cs">
+    <Compile Update="UI\Panels\Config\TransformOptionsGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\TransformOptionsGroup.Designer.cs">
-      <DependentUpon>TransformOptionsGroup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFInputMultiplexerPanel.cs">
+    <Compile Update="UI\Panels\Device\MFInputMultiplexerPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFInputMultiplexerPanel.Designer.cs">
-      <DependentUpon>MFInputMultiplexerPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFMultiplexerDriverSubPanel.cs">
+    <Compile Update="UI\Panels\Device\MFMultiplexerDriverSubPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFMultiplexerDriverSubPanel.Designer.cs">
-      <DependentUpon>MFMultiplexerDriverSubPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFInputShiftRegisterPanel.cs">
+    <Compile Update="UI\Panels\Device\MFInputShiftRegisterPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFInputShiftRegisterPanel.Designer.cs">
-      <DependentUpon>MFInputShiftRegisterPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\InputConfigPanel.cs">
+    <Compile Update="UI\Panels\InputConfigPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\InputConfigPanel.Designer.cs">
-      <DependentUpon>InputConfigPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Input\InputMultiplexerPanel.cs">
+    <Compile Update="UI\Panels\Input\InputMultiplexerPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Input\InputMultiplexerPanel.Designer.cs">
-      <DependentUpon>InputMultiplexerPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Input\InputShiftRegisterPanel.cs">
+    <Compile Update="UI\Panels\Input\InputShiftRegisterPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Input\InputShiftRegisterPanel.Designer.cs">
-      <DependentUpon>InputShiftRegisterPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Input\AnalogPanel.cs">
+    <Compile Update="UI\Panels\Input\AnalogPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Input\AnalogPanel.Designer.cs">
-      <DependentUpon>AnalogPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\LogPanel.cs">
+    <Compile Update="UI\Panels\LogPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\LogPanel.Designer.cs">
-      <DependentUpon>LogPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\OutputConfigPanel.cs">
+    <Compile Update="UI\Panels\OutputConfigPanel.cs" />
+    <Compile Update="UI\Panels\OutputWizard\DisplayPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\OutputConfigPanel.Designer.cs">
-      <DependentUpon>OutputConfigPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\OutputWizard\DisplayPanel.cs">
+    <Compile Update="UI\Panels\Output\PinSelectPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\OutputWizard\DisplayPanel.Designer.cs">
-      <DependentUpon>DisplayPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\PinSelectPanel.cs">
+    <Compile Update="UI\Panels\Output\DisplayShiftRegisterPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\PinSelectPanel.Designer.cs">
-      <DependentUpon>PinSelectPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\DisplayShiftRegisterPanel.cs">
+    <Compile Update="UI\Panels\Settings\ArcazePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\DisplayShiftRegisterPanel.Designer.cs">
-      <DependentUpon>DisplayShiftRegisterPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Settings\ArcazePanel.cs">
+    <Compile Update="UI\Panels\Settings\GeneralPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Settings\ArcazePanel.Designer.cs">
-      <DependentUpon>ArcazePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Settings\GeneralPanel.cs">
+    <Compile Update="UI\Panels\Device\MFShiftRegisterPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Settings\GeneralPanel.Designer.cs">
-      <DependentUpon>GeneralPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFShiftRegisterPanel.cs">
+    <Compile Update="UI\Panels\Settings\MobiFlightPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFShiftRegisterPanel.Designer.cs">
-      <DependentUpon>MFShiftRegisterPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Settings\MobiFlightPanel.cs">
+    <Compile Update="UI\Panels\StartupPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Settings\MobiFlightPanel.Designer.cs">
-      <DependentUpon>MobiFlightPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\StartupPanel.cs">
+    <Compile Update="UI\Panels\Device\MFLcdDisplayPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\StartupPanel.Designer.cs">
-      <DependentUpon>StartupPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MobiFlight\InputConfig\PmdgEventIdInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\RetriggerInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\VJoyInputAction.cs" />
-    <Compile Include="MobiFlight\KeyboardInputInterface.cs" />
-    <Compile Include="MobiFlight\MobiFlightCacheInterface.cs" />
-    <Compile Include="MobiFlight\MobiFlightLcdDisplay.cs" />
-    <Compile Include="MobiFlight\OutputConfig\Stepper.cs" />
-    <Compile Include="MobiFlight\OutputConfig\LcdDisplay.cs" />
-    <Compile Include="UI\Panels\Device\MFLcdDisplayPanel.cs">
+    <Compile Update="UI\Panels\Config\BytePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFLcdDisplayPanel.Designer.cs">
-      <DependentUpon>MFLcdDisplayPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MobiFlight\Modifier\Transformation.cs" />
-    <Compile Include="UI\Panels\Config\BytePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Panels\Config\BytePanel.Designer.cs">
-      <DependentUpon>BytePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\CmdLineParams.cs" />
-    <Compile Include="Base\ComboBoxHelper.cs" />
-    <Compile Include="Base\ConfigErrorException.cs" />
-    <Compile Include="Base\ConfigFile.cs" />
-    <Compile Include="UI\Dialogs\ConfigWizard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\ConfigWizard.Designer.cs">
-      <DependentUpon>ConfigWizard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FSUIPC\FSUIPCConfigItem.cs" />
-    <Compile Include="MobiFlight\InputConfig\JeehellInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\EventIdInputAction.cs" />
-    <Compile Include="MobiFlight\Modifier\Interpolation.cs" />
-    <Compile Include="MobiFlight\KeyboardInput.cs" />
-    <Compile Include="MobiFlight\OutputConfigItem.cs" />
-    <Compile Include="Base\ConnectorValue.cs" />
-    <Compile Include="Base\ConverterConfig.cs" />
-    <Compile Include="Arcaze\DeviceInfoAndCache.cs" />
-    <Compile Include="Base\EventTimer.cs">
+    <Compile Update="Base\EventTimer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MobiFlight\ExecutionManager.cs" />
-    <Compile Include="FSUIPC\Fsuipc2Cache.cs" />
-    <Compile Include="FSUIPC\fsuipcBCD.cs" />
-    <Compile Include="Arcaze\ArcazeLedDisplayConfig.cs" />
-    <Compile Include="FSUIPC\FsuipcHelper.cs" />
-    <Compile Include="FSUIPC\FSUIPCOffsetType.cs" />
-    <Compile Include="UI\Dialogs\InputConfigWizard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\InputConfigWizard.Designer.cs">
-      <DependentUpon>InputConfigWizard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\ListItem.cs" />
-    <Compile Include="Base\Log.cs" />
-    <Compile Include="UI\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\InputConnectorInterface.cs" />
-    <Compile Include="Base\IModule.cs" />
-    <Compile Include="Base\IModuleInfo.cs" />
-    <Compile Include="Base\IOutputModule.cs" />
-    <Compile Include="MobiFlight\FirmwareVersionTooLowException.cs" />
-    <Compile Include="MobiFlight\InputConfigItem.cs" />
-    <Compile Include="MobiFlight\Config\BaseDevice.cs" />
-    <Compile Include="MobiFlight\Config\Button.cs" />
-    <Compile Include="MobiFlight\Config\IConfigItem.cs" />
-    <Compile Include="MobiFlight\Config\Config.cs" />
-    <Compile Include="MobiFlight\Config\Output.cs" />
-    <Compile Include="MobiFlight\Config\Stepper.cs" />
-    <Compile Include="MobiFlight\Config\Servo.cs" />
-    <Compile Include="MobiFlight\Config\LedModule.cs" />
-    <Compile Include="UI\Forms\FirmwareUpdateProcess.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\FirmwareUpdateProcess.Designer.cs">
-      <DependentUpon>FirmwareUpdateProcess.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MobiFlight\IConnectedDevice.cs" />
-    <Compile Include="MobiFlight\InputConfig\BaseInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\ButtonInputConfig.cs" />
-    <Compile Include="MobiFlight\InputConfig\EncoderInputConfig.cs" />
-    <Compile Include="MobiFlight\InputConfig\LuaMacroInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\FsuipcOffsetInputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\IInputActionType.cs" />
-    <Compile Include="MobiFlight\InputConfig\InputAction.cs" />
-    <Compile Include="MobiFlight\InputConfig\KeyInputAction.cs" />
-    <Compile Include="MobiFlight\MobiFlightFirmwareUpdater.cs" />
-    <Compile Include="MobiFlight\MobiFlightOutput.cs" />
-    <Compile Include="MobiFlight\MobiFlightServo.cs" />
-    <Compile Include="MobiFlight\MobiFlightCache.cs" />
-    <Compile Include="MobiFlight\MobiFlightModuleInfo.cs" />
-    <Compile Include="MobiFlight\MobiFlightIOBasic.cs" />
-    <Compile Include="MobiFlight\MobiFlightLedModule.cs" />
-    <Compile Include="MobiFlight\MobiFlightModule.cs" />
-    <Compile Include="MobiFlight\MobiFlightStepper.cs" />
-    <Compile Include="UI\Panels\Device\MFModulePanel.cs">
+    <Compile Update="UI\Panels\Device\MFModulePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFModulePanel.Designer.cs">
-      <DependentUpon>MFModulePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFOutputPanel.cs">
+    <Compile Update="UI\Panels\Device\MFOutputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFOutputPanel.Designer.cs">
-      <DependentUpon>MFOutputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFEncoderPanel.cs">
+    <Compile Update="UI\Panels\Device\MFEncoderPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFEncoderPanel.Designer.cs">
-      <DependentUpon>MFEncoderPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFButtonPanel.cs">
+    <Compile Update="UI\Panels\Device\MFButtonPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFButtonPanel.Designer.cs">
-      <DependentUpon>MFButtonPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFStepperPanel.cs">
+    <Compile Update="UI\Panels\Device\MFStepperPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFStepperPanel.Designer.cs">
-      <DependentUpon>MFStepperPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFServoPanel.cs">
+    <Compile Update="UI\Panels\Device\MFServoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFServoPanel.Designer.cs">
-      <DependentUpon>MFServoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Device\MFLedSegmentPanel.cs">
+    <Compile Update="UI\Panels\Device\MFLedSegmentPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Device\MFLedSegmentPanel.Designer.cs">
-      <DependentUpon>MFLedSegmentPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MobiFlight\ModuleCacheInterface.cs" />
-    <Compile Include="UI\Dialogs\OrphanedSerialsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\OrphanedSerialsDialog.Designer.cs">
-      <DependentUpon>OrphanedSerialsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\Precondition.cs" />
-    <Compile Include="UI\Panels\Config\ActionTypePanel.cs">
+    <Compile Update="UI\Panels\Config\ActionTypePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\ActionTypePanel.Designer.cs">
-      <DependentUpon>ActionTypePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\DisplayBcdPanel.cs">
+    <Compile Update="UI\Panels\Output\DisplayBcdPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\DisplayBcdPanel.Designer.cs">
-      <DependentUpon>DisplayBcdPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\DisplayLedDisplayPanel.cs">
+    <Compile Update="UI\Panels\Output\DisplayLedDisplayPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\DisplayLedDisplayPanel.Designer.cs">
-      <DependentUpon>DisplayLedDisplayPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\DisplayNothingSelectedPanel.cs">
+    <Compile Update="UI\Panels\Output\DisplayNothingSelectedPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\DisplayNothingSelectedPanel.Designer.cs">
-      <DependentUpon>DisplayNothingSelectedPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\DisplayPinPanel.cs">
+    <Compile Update="UI\Panels\Output\DisplayPinPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\DisplayPinPanel.Designer.cs">
-      <DependentUpon>DisplayPinPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Input\ButtonPanel.cs">
+    <Compile Update="UI\Panels\Input\ButtonPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Input\ButtonPanel.Designer.cs">
-      <DependentUpon>ButtonPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\PmdgEventIdInputPanel.cs">
+    <Compile Update="UI\Panels\Action\PmdgEventIdInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\PmdgEventIdInputPanel.Designer.cs">
-      <DependentUpon>PmdgEventIdInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\ConfigRefPanel.cs">
+    <Compile Update="UI\Panels\Config\ConfigRefPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\ConfigRefPanel.Designer.cs">
-      <DependentUpon>ConfigRefPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\ConfigRefPanelItem.cs">
+    <Compile Update="UI\Panels\Config\ConfigRefPanelItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\ConfigRefPanelItem.Designer.cs">
-      <DependentUpon>ConfigRefPanelItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\FsuipcConfigPanel.cs">
+    <Compile Update="UI\Panels\Config\FsuipcConfigPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\FsuipcConfigPanel.Designer.cs">
-      <DependentUpon>FsuipcConfigPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Config\InterpolationPanel.cs">
+    <Compile Update="UI\Panels\Config\InterpolationPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Config\InterpolationPanel.Designer.cs">
-      <DependentUpon>InterpolationPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\InputActionPanel.cs">
+    <Compile Update="UI\Panels\Action\InputActionPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\InputActionPanel.Designer.cs">
-      <DependentUpon>InputActionPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Input\EncoderPanel.cs">
+    <Compile Update="UI\Panels\Input\EncoderPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Input\EncoderPanel.Designer.cs">
-      <DependentUpon>EncoderPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\EventIdInputPanel.cs">
+    <Compile Update="UI\Panels\Action\EventIdInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\EventIdInputPanel.Designer.cs">
-      <DependentUpon>EventIdInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\RetriggerInputPanel.cs">
+    <Compile Update="UI\Panels\Action\RetriggerInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\RetriggerInputPanel.Designer.cs">
-      <DependentUpon>RetriggerInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\LuaMacroInputPanel.cs">
+    <Compile Update="UI\Panels\Action\LuaMacroInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\LuaMacroInputPanel.Designer.cs">
-      <DependentUpon>LuaMacroInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\JeehellInputPanel.cs">
+    <Compile Update="UI\Panels\Action\JeehellInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\JeehellInputPanel.Designer.cs">
-      <DependentUpon>JeehellInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Action\KeyboardInputPanel.cs">
+    <Compile Update="UI\Panels\Action\KeyboardInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\KeyboardInputPanel.Designer.cs">
-      <DependentUpon>KeyboardInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\StepperPanel.cs">
+    <Compile Update="UI\Panels\Output\StepperPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\StepperPanel.Designer.cs">
-      <DependentUpon>StepperPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\ServoPanel.cs">
+    <Compile Update="UI\Panels\Output\ServoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\ServoPanel.Designer.cs">
-      <DependentUpon>ServoPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="ProjectMessages\ProjectMessages.de.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectMessages.de.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectMessages\ProjectMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="UI\Dialogs\SettingsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\SettingsDialog.Designer.cs">
-      <DependentUpon>SettingsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\ReadCacheInterface.cs" />
-    <Compile Include="Base\UsageDetails.cs" />
-    <Compile Include="UI\Dialogs\WelcomeDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dialogs\WelcomeDialog.Designer.cs">
-      <DependentUpon>WelcomeDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SimConnectMSFS\SimConnectCache.cs" />
-    <Compile Include="VJoy\VJoyExceptions.cs" />
-    <Compile Include="VJoy\VJoyHelper.cs" />
-    <Compile Include="UI\Panels\Action\VJoyInputPanel.cs">
+    <Compile Update="UI\Panels\Action\VJoyInputPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Action\VJoyInputPanel.Designer.cs">
-      <DependentUpon>VJoyInputPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Panels\Output\LCDDisplayPanel.cs">
+    <Compile Update="UI\Panels\Output\LCDDisplayPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Panels\Output\LCDDisplayPanel.Designer.cs">
-      <DependentUpon>LCDDisplayPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="xplane\XplaneCacheInterface.cs" />
-    <Compile Include="xplane\XplaneCache.cs" />
-    <Compile Include="xplane\XplaneDataRef.cs" />
-    <None Include="ApplicationInsights.config" />
-    <None Include="Boards\arduino_mega.board.json">
+    <None Update="Boards\arduino_mega.board.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Boards\arduino_micro.board.json">
+    <None Update="Boards\arduino_micro.board.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Boards\arduino_nano.board.json">
+    <None Update="Boards\arduino_nano.board.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Boards\arduino_uno.board.json">
+    <None Update="Boards\arduino_uno.board.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Boards\mfboard.schema.json">
+    <None Update="Boards\mfboard.schema.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Boards\raspberrypi_pico.board.json">
+    <None Update="Boards\raspberrypi_pico.board.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Build\build-firmware.bat" />
-    <None Include="Build\release.bat" />
-    <None Include="examples\example-default-plane-v6.1.mcc">
+    <None Update="examples\example-default-plane-v6.1.mcc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="examples\example-jeehell-datapipe.mcc">
+    <None Update="examples\example-jeehell-datapipe.mcc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="examples\example-tutorial-7-segment.mcc">
+    <None Update="examples\example-tutorial-7-segment.mcc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="examples\Homecockpit_C172.mcc">
+    <None Update="examples\Homecockpit_C172.mcc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="examples\mobiflight-in-action-episode-1.mcc">
+    <None Update="examples\mobiflight-in-action-episode-1.mcc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="examples\tutorial-episode2.mcc">
+    <None Update="examples\tutorial-episode2.mcc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\mobiflight_mega_2_4_1.hex">
+    <None Update="firmware\mobiflight_mega_2_4_1.hex">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\mobiflight_micro_2_4_1.hex">
+    <None Update="firmware\mobiflight_micro_2_4_1.hex">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\mobiflight_nano_2_4_1.hex">
+    <None Update="firmware\mobiflight_nano_2_4_1.hex">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\mobiflight_raspberrypico_2_4_1.uf2">
+    <None Update="firmware\mobiflight_raspberrypico_2_4_1.uf2">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\mobiflight_uno_2_4_1.hex">
+    <None Update="firmware\mobiflight_uno_2_4_1.hex">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\reset.arduino_mega_1_0_2.hex">
+    <None Update="firmware\reset.arduino_mega_1_0_2.hex">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\reset.arduino_promicro_1_0_2.hex">
+    <None Update="firmware\reset.arduino_promicro_1_0_2.hex">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\reset.arduino_uno_1_0_2.hex">
+    <None Update="firmware\reset.arduino_uno_1_0_2.hex">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="firmware\reset.raspberry_pico_flash_nuke.uf2">
+    <None Update="firmware\reset.raspberry_pico_flash_nuke.uf2">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
-    <None Include="Joysticks\honeycomb_alpha.joystick.json">
+    <None Update="Joysticks\honeycomb_alpha.joystick.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Joysticks\honeycomb_bravo.joystick.json">
+    <None Update="Joysticks\honeycomb_bravo.joystick.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Joysticks\mfjoystick.schema.json">
+    <None Update="Joysticks\mfjoystick.schema.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Joysticks\saitek_aviator_stick.joystick.json">
+    <None Update="Joysticks\saitek_aviator_stick.joystick.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\msfs2020_simvars.cip">
+    <None Update="Presets\msfs2020_simvars.cip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\msfs2020_eventids.cip">
+    <None Update="Presets\msfs2020_eventids.cip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\msfs2020_eventids_user.cip.inactive">
+    <None Update="Presets\msfs2020_eventids_user.cip.inactive">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\presets_eventids_pmdg_737.cip">
+    <None Update="Presets\presets_eventids_pmdg_737.cip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\presets_eventids_pmdg_747.cip">
+    <None Update="Presets\presets_eventids_pmdg_747.cip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\presets_eventids_pmdg_777.cip">
+    <None Update="Presets\presets_eventids_pmdg_777.cip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\presets_jeehell.cip">
+    <None Update="Presets\presets_jeehell.cip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\presets_eventids.cip">
+    <None Update="Presets\presets_eventids.cip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\msfs2020_hubhop_presets.json">
+    <None Update="Presets\msfs2020_hubhop_presets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Presets\xplane_hubhop_presets.json">
+    <None Update="Presets\xplane_hubhop_presets.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\arcaze-module.png" />
-    <None Include="Resources\arcaze-new.png" />
-    <None Include="Resources\arcaze-changed.png" />
-    <Content Include="mobiflight.ico" />
-    <Content Include="Resources\button.png" />
-    <Content Include="Resources\discord_icon.png" />
-    <Content Include="Resources\encoder.png" />
-    <Content Include="Resources\led.png" />
-    <EmbeddedResource Include="UI\Dialogs\DonateDialog.de.resx">
-      <DependentUpon>DonateDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\DonateDialog.resx">
-      <DependentUpon>DonateDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\CommunityFeedbackStartupForm.de.resx">
-      <DependentUpon>CommunityFeedbackStartupForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\CommunityFeedbackStartupForm.resx">
-      <DependentUpon>CommunityFeedbackStartupForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\Msfs2020StartupForm.resx">
-      <DependentUpon>Msfs2020StartupForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\SettingsDialog.de-DE.resx">
-      <DependentUpon>SettingsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\TimeoutMessageDialog.de.resx">
-      <DependentUpon>TimeoutMessageDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\TimeoutMessageDialog.resx">
-      <DependentUpon>TimeoutMessageDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\TransparentOverlay.resx">
-      <DependentUpon>TransparentOverlay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\ArduinoIdePathForm.de.resx">
-      <DependentUpon>ArduinoIdePathForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\ArduinoIdePathForm.resx">
-      <DependentUpon>ArduinoIdePathForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\ConfigUploadProgress.resx">
-      <DependentUpon>ConfigUploadProgress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\FirmwareUpdateProcess.de.resx">
-      <DependentUpon>FirmwareUpdateProcess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\ProgressForm.resx">
-      <DependentUpon>ProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\SimConnectLvarsListForm.de.resx">
-      <DependentUpon>SimConnectLvarsListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\SimConnectLvarsListForm.resx">
-      <DependentUpon>SimConnectLvarsListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\SimConnectPanelIndexSelectForm.de.resx">
-      <DependentUpon>SimConnectPanelIndexSelectForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\SimConnectPanelIndexSelectForm.resx">
-      <DependentUpon>SimConnectPanelIndexSelectForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\About\LicenseReferenceControl.resx">
-      <DependentUpon>LicenseReferenceControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\MSFS2020CustomInputPanel.de.resx">
-      <DependentUpon>MSFS2020CustomInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\MSFS2020CustomInputPanel.resx">
-      <DependentUpon>MSFS2020CustomInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\VariableInputPanel.de.resx">
-      <DependentUpon>VariableInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\VariableInputPanel.resx">
-      <DependentUpon>VariableInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\JeehellInputPanel.de.resx">
-      <DependentUpon>JeehellInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\LuaMacroInputPanel.de.resx">
-      <DependentUpon>LuaMacroInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\MSFS2020InputPanel.de.resx">
-      <DependentUpon>MSFS2020InputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\MSFS2020InputPanel.resx">
-      <DependentUpon>MSFS2020InputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\RetriggerInputPanel.de.resx">
-      <DependentUpon>RetriggerInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\VJoyInputPanel.de.resx">
-      <DependentUpon>VJoyInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\XplaneInputPanel.resx">
-      <DependentUpon>XplaneInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\ActionTypePanel.de.resx">
-      <DependentUpon>ActionTypePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\ConfigRefPanel.de.resx">
-      <DependentUpon>ConfigRefPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\HubHopPresetPanel.resx">
-      <DependentUpon>HubHopPresetPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\PreconditionPanel.de.resx">
-      <DependentUpon>PreconditionPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\PreconditionPanel.resx">
-      <DependentUpon>PreconditionPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\SimConnectPanel.resx">
-      <DependentUpon>SimConnectPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\TransformOptionsGroup.de.resx">
-      <DependentUpon>TransformOptionsGroup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\TransformOptionsGroup.resx">
-      <DependentUpon>TransformOptionsGroup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\VariablePanel.de.resx">
-      <DependentUpon>VariablePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\VariablePanel.resx">
-      <DependentUpon>VariablePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\XplaneDataRefPanel.resx">
-      <DependentUpon>XplaneDataRefPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFAnalogPanel.de.resx">
-      <DependentUpon>MFAnalogPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFAnalogPanel.resx">
-      <DependentUpon>MFAnalogPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFInputMultiplexerPanel.de.resx">
-      <DependentUpon>MFInputMultiplexerPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFInputMultiplexerPanel.resx">
-      <DependentUpon>MFInputMultiplexerPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFMultiplexerDriverSubPanel.de.resx">
-      <DependentUpon>MFMultiplexerDriverSubPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFMultiplexerDriverSubPanel.resx">
-      <DependentUpon>MFMultiplexerDriverSubPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFInputShiftRegisterPanel.de.resx">
-      <DependentUpon>MFInputShiftRegisterPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFInputShiftRegisterPanel.resx">
-      <DependentUpon>MFInputShiftRegisterPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFLcdDisplayPanel.de.resx">
-      <DependentUpon>MFLcdDisplayPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFShiftRegisterPanel.de.resx">
-      <DependentUpon>MFShiftRegisterPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\InputConfigPanel.de.resx">
-      <DependentUpon>InputConfigPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\InputConfigPanel.resx">
-      <DependentUpon>InputConfigPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Input\InputMultiplexerPanel.resx">
-      <DependentUpon>InputMultiplexerPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Input\InputShiftRegisterPanel.resx">
-      <DependentUpon>InputShiftRegisterPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Input\AnalogPanel.resx">
-      <DependentUpon>AnalogPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\LogPanel.resx">
-      <DependentUpon>LogPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\OutputConfigPanel.de.resx">
-      <DependentUpon>OutputConfigPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\OutputConfigPanel.resx">
-      <DependentUpon>OutputConfigPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\OutputWizard\DisplayPanel.de.resx">
-      <DependentUpon>DisplayPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\OutputWizard\DisplayPanel.fr-DJ.resx">
-      <DependentUpon>DisplayPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\OutputWizard\DisplayPanel.resx">
-      <DependentUpon>DisplayPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\DisplayLedDisplayPanel.de.resx">
-      <DependentUpon>DisplayLedDisplayPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\PinSelectPanel.resx">
-      <DependentUpon>PinSelectPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\DisplayShiftRegisterPanel.resx">
-      <DependentUpon>DisplayShiftRegisterPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\DisplayPinPanel.de.resx">
-      <DependentUpon>DisplayPinPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Settings\ArcazePanel.de.resx">
-      <DependentUpon>ArcazePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Settings\ArcazePanel.resx">
-      <DependentUpon>ArcazePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Settings\GeneralPanel.de.resx">
-      <DependentUpon>GeneralPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Settings\GeneralPanel.resx">
-      <DependentUpon>GeneralPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFShiftRegisterPanel.resx">
-      <DependentUpon>MFShiftRegisterPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Settings\MobiFlightPanel.de.resx">
-      <DependentUpon>MobiFlightPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Settings\MobiFlightPanel.resx">
-      <DependentUpon>MobiFlightPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\StartupPanel.resx">
-      <DependentUpon>StartupPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFLcdDisplayPanel.resx">
-      <DependentUpon>MFLcdDisplayPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\PmdgEventIdInputPanel.de.resx">
-      <DependentUpon>PmdgEventIdInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\PmdgEventIdInputPanel.resx">
-      <DependentUpon>PmdgEventIdInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\ConfigRefPanel.resx">
-      <DependentUpon>ConfigRefPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\ConfigRefPanelItem.de.resx">
-      <DependentUpon>ConfigRefPanelItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\ConfigRefPanelItem.resx">
-      <DependentUpon>ConfigRefPanelItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\FsuipcConfigPanel.de.resx">
-      <DependentUpon>FsuipcConfigPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\InterpolationPanel.de.resx">
-      <DependentUpon>InterpolationPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\InterpolationPanel.resx">
-      <DependentUpon>InterpolationPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\EventIdInputPanel.de.resx">
-      <DependentUpon>EventIdInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\EventIdInputPanel.resx">
-      <DependentUpon>EventIdInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\LCDDisplayPanel.de.resx">
-      <DependentUpon>LCDDisplayPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\RetriggerInputPanel.resx">
-      <DependentUpon>RetriggerInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\LuaMacroInputPanel.resx">
-      <DependentUpon>LuaMacroInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\JeehellInputPanel.resx">
-      <DependentUpon>JeehellInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\KeyboardInputPanel.de.resx">
-      <DependentUpon>KeyboardInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\KeyboardInputPanel.resx">
-      <DependentUpon>KeyboardInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\ServoPanel.de.resx">
-      <DependentUpon>ServoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\StepperPanel.de.resx">
-      <DependentUpon>StepperPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\StepperPanel.resx">
-      <DependentUpon>StepperPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\WelcomeDialog.de.resx">
-      <DependentUpon>WelcomeDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\WelcomeDialog.resx">
-      <DependentUpon>WelcomeDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="examples\example-release-5.0.0.mcc" />
-    <None Include="Resources\module-unknown.png" />
-    <None Include="Resources\module-arduino.png" />
-    <None Include="Resources\module-mobiflight.png" />
-    <None Include="Resources\module-changed.png" />
-    <None Include="Resources\module-mobiflight-update.png" />
     <None Include="Resources\mux_driver.bmp" />
-    <None Include="Resources\mux-driver.png" />
-    <Content Include="Resources\output.png" />
-    <None Include="Resources\port-deactivated.png" />
-    <Content Include="Resources\servo.png" />
-    <Content Include="Resources\stepper.png" />
-    <EmbeddedResource Include="UI\Dialogs\AboutForm.de.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\BitMaskEditorForm.resx">
-      <DependentUpon>BitMaskEditorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\BytePanel.resx">
-      <DependentUpon>BytePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\ConfigWizard.de.resx">
-      <DependentUpon>ConfigWizard.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\ConfigWizard.resx">
-      <DependentUpon>ConfigWizard.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\InputConfigWizard.de.resx">
-      <DependentUpon>InputConfigWizard.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\InputConfigWizard.resx">
-      <DependentUpon>InputConfigWizard.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\MainForm.de.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\FirmwareUpdateProcess.resx">
-      <DependentUpon>FirmwareUpdateProcess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFButtonPanel.de.resx">
-      <DependentUpon>MFButtonPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFEncoderPanel.de.resx">
-      <DependentUpon>MFEncoderPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFLedSegmentPanel.de.resx">
-      <DependentUpon>MFLedSegmentPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFModulePanel.resx">
-      <DependentUpon>MFModulePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFOutputPanel.de.resx">
-      <DependentUpon>MFOutputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFOutputPanel.resx">
-      <DependentUpon>MFOutputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFEncoderPanel.resx">
-      <DependentUpon>MFEncoderPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFButtonPanel.resx">
-      <DependentUpon>MFButtonPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFStepperPanel.resx">
-      <DependentUpon>MFStepperPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFServoPanel.resx">
-      <DependentUpon>MFServoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Device\MFLedSegmentPanel.resx">
-      <DependentUpon>MFLedSegmentPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\OrphanedSerialsDialog.de.resx">
-      <DependentUpon>OrphanedSerialsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\OrphanedSerialsDialog.resx">
-      <DependentUpon>OrphanedSerialsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\ActionTypePanel.resx">
-      <DependentUpon>ActionTypePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\DisplayBcdPanel.resx">
-      <DependentUpon>DisplayBcdPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\DisplayLedDisplayPanel.resx">
-      <DependentUpon>DisplayLedDisplayPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\DisplayNothingSelectedPanel.resx">
-      <DependentUpon>DisplayNothingSelectedPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\DisplayPinPanel.resx">
-      <DependentUpon>DisplayPinPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Input\ButtonPanel.resx">
-      <DependentUpon>ButtonPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Config\FsuipcConfigPanel.resx">
-      <DependentUpon>FsuipcConfigPanel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\InputActionPanel.resx">
-      <DependentUpon>InputActionPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Input\EncoderPanel.resx">
-      <DependentUpon>EncoderPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\ServoPanel.resx">
-      <DependentUpon>ServoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProjectMessages\ProjectMessages.de.resx">
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ProjectMessages.de.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProjectMessages\ProjectMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ProjectMessages.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="UI\Dialogs\SettingsDialog.de.resx">
-      <DependentUpon>SettingsDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dialogs\SettingsDialog.resx">
-      <DependentUpon>SettingsDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Action\VJoyInputPanel.resx">
-      <DependentUpon>VJoyInputPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Panels\Output\LCDDisplayPanel.resx">
-      <DependentUpon>LCDDisplayPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Presets\presets.aip">
+    <None Update="Presets\presets.aip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Presets\presets_inputs.aip">
+    <None Update="Presets\presets_inputs.aip">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Properties\app.manifest" />
-    <None Include="Properties\Settings.settings">
+    <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -1496,73 +447,180 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sound.png" />
-    <None Include="Resources\star_yellow_delete.png" />
-    <None Include="Resources\star_yellow_add.png" />
-    <None Include="Resources\star_yellow_new.png" />
-    <None Include="Resources\document_delete.png" />
-    <None Include="Resources\document_new.png" />
-    <None Include="Resources\delete2.png" />
-    <None Include="Resources\btn_donate_SM.gif" />
-    <None Include="Resources\btn_donate_uk_SM.gif" />
-    <None Include="Resources\application_up.png" />
-    <None Include="Resources\folder.png" />
-    <None Include="Resources\folder1.png" />
-    <None Include="Resources\export1.png" />
-    <None Include="Resources\cd.png" />
-    <None Include="Resources\dvd.png" />
-    <Content Include="Resources\7-led.png" />
-    <Content Include="Resources\lightbulb.png" />
-    <Content Include="Resources\lightbulb_on.png" />
-    <None Include="Resources\media_stop_red.png" />
-    <None Include="Resources\media_stop.png" />
-    <None Include="Resources\media_play_green.png" />
-    <None Include="Resources\media_play.png" />
-    <None Include="Resources\door2.png" />
-    <None Include="Resources\disk_blue.png" />
-    <None Include="Resources\warning.png" />
-    <None Include="Resources\check.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Release\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="CmdMessenger\CommandMessenger.Transport.Serial\CommandMessenger.Transport.Serial.csproj">
-      <Project>{00d85f0b-00a5-41fa-8a99-428c0199c663}</Project>
-      <Name>CommandMessenger.Transport.Serial</Name>
-    </ProjectReference>
-    <ProjectReference Include="CmdMessenger\CommandMessenger\CommandMessenger.csproj">
-      <Project>{3cf8f8fc-6f5c-46f8-94dc-c2e4c505eca4}</Project>
-      <Name>CommandMessenger</Name>
-    </ProjectReference>
+    <ProjectReference Include="CmdMessenger\CommandMessenger.Transport.Serial\CommandMessenger.Transport.Serial.csproj" />
+    <ProjectReference Include="CmdMessenger\CommandMessenger\CommandMessenger.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="FSUIPCClientDLL" Version="3.3.3" />
+    <PackageReference Include="HidSharp" Version="2.1.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.21.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel" Version="2.21.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1518.46" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="protobuf-net" Version="3.1.33" />
+    <PackageReference Include="protobuf-net.Core" Version="3.1.33" />
+    <PackageReference Include="SharpDX" Version="4.2.0" />
+    <PackageReference Include="SharpDX.DirectInput" Version="4.2.0" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.CodeDom" Version="7.0.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="7.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="7.0.0" />
+    <PackageReference Include="System.Management" Version="7.0.1" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.Caching" Version="7.0.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="XPlaneConnector" Version="1.3.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.410601">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Windows.Forms.DataVisualization" Version="1.0.0-prerelease.20110.1" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\ISerialConnectionStorer.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\obj\x86\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\Properties\AssemblyInfo.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\SerialConnectionManager.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\SerialConnectionStorer.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\SerialSettings.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\SerialTransport.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger.Transport.Serial\SerialUtils.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\AsyncWorker.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\BinaryConverter.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\CmdMessenger.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Command.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\CommandEventArgs.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\CommunicationManager.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\ConnectionManager.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Escaped.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\EventWaiter.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Logger.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Properties\AssemblyInfo.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\CollapseCommandStrategy.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\CommandQueue.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\CommandStrategy.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\GeneralStrategy.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\ListQueue.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\ReceiveCommandQueue.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\SendCommandQueue.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\StaleGeneralStrategy.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Queue\TopCommandStrategy.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\ReceivedCommand.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\ReceivedCommandSignal.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\SendCommand.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\StringUtils.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\StructSerializer.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\TimeUtils.cs" />
+    <Compile Remove="CmdMessenger\CommandMessenger\Transport\ITransport.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\lang\i18n_Messages.de.Designer.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\lang\i18n_Messages.Designer.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\lang\i18n_Messages.fr.Designer.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\model\CmdLineParams.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\model\i18n.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\model\Log.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\model\MobiFlightHelperMethods.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\model\MobiFlightUpdaterModel.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\Program.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\Properties\AssemblyInfo.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\Properties\Resources.Designer.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\Properties\Settings.Designer.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\UI\ExpertMainForm.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\UI\ExpertMainForm.Designer.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\UI\UpdaterMainForm.cs" />
+    <Compile Remove="MobiFlight-Installer\MobiFlight-Installer\UI\UpdaterMainForm.Designer.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\BooleanConverterConfigTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\CmdLineParamsTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\ComboBoxHelperTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\ConfigFileTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\ConfigRefListTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\ConfigRefTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\ConnectorValueTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\PreconditionListTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\PreconditionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Base\SerialNumberTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\EventIdInputPanelTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Forms\ConfigWizardTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\HubHop\Msfs2020HubhopPresetListTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\Config\ConfigTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfigItemTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\AnalogInputConfigTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\ButtonInputConfigTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\EncoderInputConfigTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\EventIdInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\FsuipcOffsetInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\InputMultiplexerConfigTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\InputShiftRegisterConfigTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\JeehellInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\KeyInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\LuaMacroInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\MSFS2020CustomInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\MSFS2020EventIdInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\PmdgEventIdInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\RetriggerInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\VariableInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\VJoyInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\InputConfig\XplaneInputActionTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\LedModuleStateTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\MobiFlightLcdDisplayTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\MobiFlightLedModuleTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\MobiFlightModuleTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\Modifier\ComparisonTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\Modifier\InterpolationTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\Modifier\TransformationTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfigItemTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\FsuipcOffsetTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\LcdDisplayTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\LedModuleTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\PinTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\ServoTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\SimConnectValueTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\StepperTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\MobiFlight\OutputConfig\VariableOutputTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\mock\Base\KeyboardInputMock.cs" />
+    <Compile Remove="MobiFlightUnitTests\mock\CommandMessenger\MockTransport.cs" />
+    <Compile Remove="MobiFlightUnitTests\mock\FSUIPC\FSUIPCCacheMock.cs" />
+    <Compile Remove="MobiFlightUnitTests\mock\MobiFlight\MobiFlightCacheMock.cs" />
+    <Compile Remove="MobiFlightUnitTests\mock\SimConnectMSFS\SimConnectCacheMock.cs" />
+    <Compile Remove="MobiFlightUnitTests\mock\xplane\XplaneCacheMock.cs" />
+    <Compile Remove="MobiFlightUnitTests\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Remove="MobiFlightUnitTests\Panels\Group\InterpolationPanelTests.cs" />
+    <Compile Remove="MobiFlightUnitTests\Properties\AssemblyInfo.cs" />
+    <Compile Remove="VersionInfo\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Remove="VersionInfo\Program.cs" />
+    <Compile Remove="VersionInfo\Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Remove="MobiFlight-Installer\MobiFlight-Installer\lang\i18n_Messages.de.resx" />
+    <EmbeddedResource Remove="MobiFlight-Installer\MobiFlight-Installer\lang\i18n_Messages.fr.resx" />
+    <EmbeddedResource Remove="MobiFlight-Installer\MobiFlight-Installer\lang\i18n_Messages.resx" />
+    <EmbeddedResource Remove="MobiFlight-Installer\MobiFlight-Installer\Properties\Resources.resx" />
+    <EmbeddedResource Remove="MobiFlight-Installer\MobiFlight-Installer\UI\ExpertMainForm.resx" />
+    <EmbeddedResource Remove="MobiFlight-Installer\MobiFlight-Installer\UI\UpdaterMainForm.resx" />
+  </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>if "$(ConfigurationName)" == "Release" ($(ProjectDir)Build\release.bat $(TargetDir) $(SolutionDir) 7.1.4)</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>xcopy /R /Y "$(ProjectDir)Lib\vJoyInterface.dll" "$(TargetDir)"
-xcopy /R /Y "$(ProjectDir)Lib\x86\SimConnect.dll" "$(TargetDir)"
-xcopy /R /E /Y /I "$(ProjectDir)MSFS2020-module" "$(TargetDir)MSFS2020-module"
-xcopy /R /E /Y /I "$(ProjectDir)Arduino" "$(TargetDir)Arduino"
-del "$(TargetDir)\log.txt"
-del "$(TargetDir)MSFS2020-module\mobiflight-event-module\modules\events.user.txt"</PreBuildEvent>
+    <PlatformTarget>x86</PlatformTarget>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
-  <Import Project="packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets'))" />
-    <Error Condition="!Exists('packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
-  </Target>
-  <Import Project="packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.21.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);ARCAZE;MOBIFLIGHT;SIMCONNECT</DefineConstants>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);ARCAZE;MOBIFLIGHT;SIMCONNECT</DefineConstants>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
 </Project>

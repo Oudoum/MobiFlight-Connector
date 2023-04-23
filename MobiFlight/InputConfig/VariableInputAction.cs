@@ -93,5 +93,10 @@ namespace MobiFlight.InputConfig
             return obj != null && obj is VariableInputAction &&
                 Variable.Equals((obj as VariableInputAction).Variable);
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

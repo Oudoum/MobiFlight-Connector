@@ -20,7 +20,7 @@ namespace MobiFlight.VJoy
         }
 
         private static vJoy joystick;
-        private static vJoy.JoystickState joyReport;
+        //private static vJoy.JoystickState joyReport;
 
         public static List<uint> getAvailableVJoys()
         {
@@ -69,7 +69,7 @@ namespace MobiFlight.VJoy
         public static AxisState getAvailableAxis(uint vJoyID)
         {
             joystick = new vJoy();
-            joyReport = new vJoy.JoystickState();
+            //joyReport = new vJoy.JoystickState();
             if (joystick.vJoyEnabled())
             {
                 AxisState state = new AxisState();

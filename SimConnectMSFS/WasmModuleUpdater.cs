@@ -5,6 +5,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -239,19 +240,19 @@ namespace MobiFlight.SimConnectMSFS
             progress.Current = 5;
             DownloadAndInstallProgress?.Invoke(this, progress);
 
-            if (!DownloadSingleFile(new Uri(WasmEventsTxtUrl), WasmEventsTxtFile, WasmModuleFolder + @"\modules")) return false;
+            if (!DownloadSingleFile(new Uri(WasmEventsTxtUrl), WasmEventsTxtFile, WasmModuleFolder + @"\modules").Result) return false;
             Log.Instance.log("WASM events.txt has been downloaded and installed successfully.", LogSeverity.Debug);
 
             progress.ProgressMessage = "Downloading EventIDs (legacy)";
             progress.Current = 33;
             DownloadAndInstallProgress?.Invoke(this, progress);
-            if (!DownloadSingleFile(new Uri(WasmEventsCipUrl), WasmEventsCipFileName, WasmEventsCipFolder)) return false;
+            if (!DownloadSingleFile(new Uri(WasmEventsCipUrl), WasmEventsCipFileName, WasmEventsCipFolder).Result) return false;
             Log.Instance.log("WASM msfs2020_eventids.cip has been downloaded and installed successfully.", LogSeverity.Debug);
 
             progress.ProgressMessage = "Downloading SimVars (legacy)";
             progress.Current = 66;
             DownloadAndInstallProgress?.Invoke(this, progress);
-            if (!DownloadSingleFile(new Uri(WasmEventsSimVarsUrl), WasmEventsSimVarsFileName, WasmEventsSimVarsFolder)) return false;
+            if (!DownloadSingleFile(new Uri(WasmEventsSimVarsUrl), WasmEventsSimVarsFileName, WasmEventsSimVarsFolder).Result) return false;
             Log.Instance.log("WASM msfs2020_simvars.cip has been downloaded and installed successfully.", LogSeverity.Debug);
 
             progress.ProgressMessage = "Downloading done";
@@ -267,13 +268,13 @@ namespace MobiFlight.SimConnectMSFS
             progress.ProgressMessage = "Downloading HubHop Presets (MSFS2020)";
             progress.Current = 33;
             DownloadAndInstallProgress?.Invoke(this, progress);
-            if (!DownloadSingleFile(new Uri(WasmEventHubHHopUrl), WasmEventsHubHopFileName, WasmEventsHubHopFolder)) return false;
+            if (!DownloadSingleFile(new Uri(WasmEventHubHHopUrl), WasmEventsHubHopFileName, WasmEventsHubHopFolder).Result) return false;
             Log.Instance.log($"WASM {WasmEventsHubHopFileName} has been downloaded and installed successfully.", LogSeverity.Info);
 
             progress.ProgressMessage = "Downloading HubHop Presets (XPlane)";
             progress.Current = 66;
             DownloadAndInstallProgress?.Invoke(this, progress);
-            if (!DownloadSingleFile(new Uri(WasmEventsXplaneHubHHopUrl), WasmEventsXplaneHubHopFileName, WasmEventsHubHopFolder)) return false;
+            if (!DownloadSingleFile(new Uri(WasmEventsXplaneHubHHopUrl), WasmEventsXplaneHubHopFileName, WasmEventsHubHopFolder).Result) return false;
             Log.Instance.log($"WASM {WasmEventsXplaneHubHopFileName} has been downloaded and installed successfully.", LogSeverity.Info);
 
             progress.ProgressMessage = "Downloading done";
@@ -282,16 +283,20 @@ namespace MobiFlight.SimConnectMSFS
             return true;
         }
 
-        private bool DownloadSingleFile(Uri uri, String filename, String targetPath)
+        private async Task<bool> DownloadSingleFile(Uri uri, String filename, String targetPath)
         {
             SecurityProtocolType oldType = System.Net.ServicePointManager.SecurityProtocol;
 
             System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            WebClient webClient = new WebClient();
             string tmpFile = Directory.GetCurrentDirectory() + targetPath + @"\" + filename + ".tmp";
 
-            webClient.DownloadFile(uri, tmpFile);
-            webClient.Dispose();
+            using HttpClient httpClient = new HttpClient();
+            {
+                using HttpResponseMessage response = await httpClient.GetAsync(uri);
+                response.EnsureSuccessStatusCode();
+                using FileStream fileStream = new FileStream(tmpFile, FileMode.Create, FileAccess.Write, FileShare.None);
+                await response.Content.CopyToAsync(fileStream);
+            }
 
             System.IO.File.Delete($@"{targetPath}\{filename}");
             System.IO.File.Move(tmpFile, $@"{targetPath}\{filename}");

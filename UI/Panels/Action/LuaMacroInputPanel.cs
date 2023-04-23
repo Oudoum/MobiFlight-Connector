@@ -19,7 +19,7 @@ namespace MobiFlight.UI.Panels.Action
 
         private void _loadPresets()
         {
-            bool isLoaded = true;
+            //bool isLoaded = true;
         }
         
         internal void syncFromConfig(InputConfig.LuaMacroInputAction inputAction)

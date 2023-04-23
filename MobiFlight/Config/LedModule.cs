@@ -72,5 +72,10 @@ namespace MobiFlight.Config
         {
             return Type + ":" + Name + " DinPin:" + DinPin + " ClsPin:" + ClsPin + " ClkPin:" + ClkPin;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

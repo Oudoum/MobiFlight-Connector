@@ -98,7 +98,7 @@ namespace MobiFlight
         public event InputDeviceEventHandler OnInputDeviceAction;
 
         delegate void AddLogCallback(string text);
-        SerialPort _serialPort;
+        //SerialPort _serialPort;
         protected Config.Config _config = null;
 
         /// <summary>
@@ -207,8 +207,8 @@ namespace MobiFlight
         private SerialTransport _transportLayer;
         //private SerialPortManager _transportLayer;
         private CmdMessenger _cmdMessenger;
-        private bool _ledState;
-        private int _count;
+        //private bool _ledState;
+        //private int _count;
         private string _log = "";
 
         Dictionary<String, MobiFlightLedModule> ledModules = new Dictionary<string, MobiFlightLedModule>();

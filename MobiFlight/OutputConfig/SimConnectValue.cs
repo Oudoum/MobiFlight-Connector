@@ -52,6 +52,11 @@ namespace MobiFlight.OutputConfig
                 UUID = this.UUID
             };
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public enum SimConnectVarType

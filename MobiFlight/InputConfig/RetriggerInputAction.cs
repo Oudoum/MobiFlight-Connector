@@ -47,5 +47,10 @@ namespace MobiFlight.InputConfig
         {
             return obj != null && obj is RetriggerInputAction;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

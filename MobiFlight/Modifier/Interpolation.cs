@@ -62,7 +62,6 @@ namespace MobiFlight.Modifier
 
         override public void ReadXml(XmlReader reader)
         {
-            bool atPosition = false;
             if (reader["active"] != null && reader["active"] != "")
             {
                 Active = Boolean.Parse(reader["active"]);
@@ -190,6 +189,11 @@ namespace MobiFlight.Modifier
                 Count == (obj as Interpolation).Count &&
                 Active == (obj as Interpolation).Active &&
                 entriesAreSame;
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 

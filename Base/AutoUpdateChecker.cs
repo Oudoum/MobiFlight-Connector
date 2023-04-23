@@ -3,10 +3,11 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Diagnostics;
 using System.IO;
-
+using System.Runtime.Versioning;
 
 namespace MobiFlight.UpdateChecker
 {
+    [SupportedOSPlatform("windows")]
     static class AutoUpdateChecker
     {
         static string mobiFlightInstaller = "MobiFlight-Installer.exe";

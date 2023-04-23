@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Windows.Forms;
 using MobiFlight;
@@ -14,6 +15,7 @@ using MobiFlight.UI.Panels.OutputWizard;
 
 namespace MobiFlight.UI.Dialogs
 {
+    [SupportedOSPlatform("windows")]
     public partial class ConfigWizard : Form
     {
         public event EventHandler SettingsDialogRequested;

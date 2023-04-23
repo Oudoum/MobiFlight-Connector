@@ -151,7 +151,7 @@ namespace MobiFlight.FSUIPC
                     Int16 cByte = (Int16)fsuipcCache.getValue(cfg.FSUIPC.Offset, cfg.FSUIPC.Size);
                     if (sValue == 1)
                     {
-                        sValue = (Int16)(cByte | cfg.FSUIPC.Mask);
+                        sValue = (Int16)(cByte | (Int16)cfg.FSUIPC.Mask);
                     }
                     else
                     {
@@ -169,7 +169,7 @@ namespace MobiFlight.FSUIPC
                     Int32 cByte = (Int32)fsuipcCache.getValue(cfg.FSUIPC.Offset, cfg.FSUIPC.Size);
                     if (iValue == 1)
                     {
-                        iValue = (Int32)(cByte | cfg.FSUIPC.Mask);
+                        iValue = (Int32)(cByte | (Int32)cfg.FSUIPC.Mask);
                     }
                     else
                     {

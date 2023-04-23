@@ -99,5 +99,10 @@ namespace MobiFlight.InputConfig
                 Path == (obj as XplaneInputAction).Path &&
                 Expression == (obj as XplaneInputAction).Expression;
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

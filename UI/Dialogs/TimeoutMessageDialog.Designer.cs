@@ -97,7 +97,7 @@ namespace MobiFlight.UI.Dialogs
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.CancelButton;
+            //this.CancelButton = this.CancelButton;
             this.CausesValidation = false;
             this.ControlBox = false;
             this.Controls.Add(this.ContentPanel);

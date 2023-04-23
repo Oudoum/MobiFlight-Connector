@@ -157,7 +157,7 @@ namespace MobiFlight.SimConnectMSFS
                 // Listen to exceptions
                 m_oSimConnect.OnRecvException += new SimConnect.RecvExceptionEventHandler(SimConnect_OnRecvException);
             }
-            catch (COMException ex)
+            catch (COMException)
             {
                 return false;
             }

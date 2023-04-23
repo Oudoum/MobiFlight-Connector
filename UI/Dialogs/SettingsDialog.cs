@@ -15,6 +15,7 @@ using MobiFlight.UI.Forms;
 using MobiFlight.UI.Panels.Settings;
 using MobiFlight.Base;
 using Microsoft.ApplicationInsights.DataContracts;
+using System.Runtime.Versioning;
 
 namespace MobiFlight.UI.Dialogs
 {
@@ -22,7 +23,7 @@ namespace MobiFlight.UI.Dialogs
     {
 
         ExecutionManager execManager;
-        int lastSelectedIndex = -1;
+        //int lastSelectedIndex = -1;
 
         public List<MobiFlightModule> MobiFlightModulesForUpdate {
             get { return mobiFlightPanel.modulesForUpdate; } 
@@ -40,17 +41,20 @@ namespace MobiFlight.UI.Dialogs
             set { mobiFlightPanel.PreselectedMobiFlightBoard = value; }
         }
 
+        [SupportedOSPlatform("windows")]
         public SettingsDialog()
         {
             Init();
         }
 
+        [SupportedOSPlatform("windows")]
         public SettingsDialog(ExecutionManager execManager)
         {
             this.execManager = execManager;
             Init();
         }
 
+        [SupportedOSPlatform("windows")]
         private void Init()
         {
             InitializeComponent();

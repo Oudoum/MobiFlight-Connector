@@ -64,7 +64,7 @@ namespace MobiFlight.UI.Panels.Settings.Device
             try
             {
                 byte value = byte.Parse((sender as TextBox).Text);
-            } catch (Exception ex)
+            } catch (Exception)
             {                
                 e.Cancel = true;
                 displayError(
